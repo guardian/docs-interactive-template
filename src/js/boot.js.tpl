@@ -16,7 +16,9 @@ define([], function() {
             el.innerHTML = '<div style="font-size: 24px; text-align: center; padding: 72px 0; font-family: \'Guardian Egyptian Web\',Georgia,serif;">Loading…</div>';
 
             config = {
-                'assetPath': '<%= assetPath %>'
+                'assetPath': '<%= assetPath %>',
+                'sheetName': 'gun-nation',
+                'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g'
             };
 
             // Load CSS asynchronously
