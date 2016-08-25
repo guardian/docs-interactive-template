@@ -1,5 +1,5 @@
 <div class="interactive-container">
-    <div class="docs__poster--wrapper">
+    <div class="docs__poster--wrapper" id='playerWrapper'>
         <div id="ytGuPlayer">
             <div class="docs__poster--image"></div>
             <div class="docs__poster--title-wrapper">
@@ -27,15 +27,9 @@
         <div class="docs--standfirst-wrapper">
             <div class="docs--standfirst">
                 <div class="docs--standfirst-shortdesc" data-sheet-attribute="shortDescription"></div>
-                <div class="docs--standfirst-longdesc" data-sheet-attribute="longDescription">
-                    <ul class="docs--credits-wrapper">
-                        <li class="docs--credits-title">Credits</li>
-                        <li>Director: Zed Nelson </li>
-                        <li>Producer: Zed Nelson</li>
-                        <li> Editor: Noah Payne Frank </li>
-                        <li>Executive Producer: Charlie Phillips</li>
-                        <li> Commissioned by The Guardian and Bertha Foundation</li>
-                    </ul>
+                <div class="docs--standfirst-hidden">
+                  <div class="docs--standfirst-longdesc" data-sheet-attribute="longDescription"></div>
+                  <ul class="docs--credits-wrapper" data-sheet-attribute="credits"></ul>
                 </div>
                 <div class="docs--meta docs--standfirst-read-more">Full description and credits</div>
             </div>
@@ -77,7 +71,8 @@
             Would you like a reminder with new releases?
           </p>
           <form class='email-form__form'>
-            <input type='email' id='email'>
+            <label for='email' class='email-address'>Email address</label>
+            <input type='email' id='email' placeholder="Email address">
             <input type='submit' id='remind-me' value='Remind me'>
           </form>
         </div>
