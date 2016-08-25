@@ -2,6 +2,7 @@ import mainHTML from './text/main.html!text'
 import share from './lib/share'
 import {pimpYouTubePlayer, getYouTubeVideoDuration} from './lib/youtube'
 import sheetToDOM from './lib/sheettodom'
+import emailsignup from './lib/emailsignup'
 
 var shareFn = share('Interactive title', 'http://gu.com/p/URL', '#Interactive');
 
@@ -23,6 +24,7 @@ export function init(el, context, config, mediator) {
         });
 
         pimpYouTubePlayer(youTubeId, builder.querySelector('#playerWrapper'), '100%', '100%');
+        emailsignup(builder.querySelector('.email-form__form'));
 
         var hiddenDesc = builder.querySelector('.docs--standfirst-hidden');
         var showMoreBtn = builder.querySelector('.docs--standfirst-read-more');
