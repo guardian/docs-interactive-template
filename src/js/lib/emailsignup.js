@@ -17,9 +17,11 @@ export default function emailsignup(formNode) {
                 console.log(resp);
                 if(resp.status === 201){
                     console.log("SUCCESS")
+                    formNode.innerHTML = '<p>Thank you</p>'
                 }
                 else {
                     console.log("FAILURE");
+                    formNode.innerHTML = '<p>Something went wrong</p>'
                 }
             }
             // eslint-disable-next-line
