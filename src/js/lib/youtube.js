@@ -1,33 +1,36 @@
 import youTubeIframe from 'youtube-iframe-player';
 import reqwest from 'reqwest';
 
-export function pimpYouTubePlayer(videoId, node, height, width) {
+export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelector, clickQuerySelector, autoplay = 0) {
+    console.log("IN HERE "+dom.querySelector('#playerWrapper'));
     youTubeIframe.init(function() {
         //preload youtube iframe API
         const promise = new Promise(function(resolve) {
-            var youTubePlayer = youTubeIframe.createPlayer(node.querySelector('#ytGuPlayer'), {
+            var youTubePlayer = youTubeIframe.createPlayer(dom.querySelector(playerQuerySelector), {
                 height: height,
                 width: width,
                 videoId: videoId,
-                playerVars: { 'autoplay': 0, 'controls': 1 },
+                playerVars: { 'autoplay': autoplay, 'controls': 1 },
                 events: {
                     'onReady': function(){
                       resolve(youTubePlayer);
                     }
                 }
             });
-            });
+        });
 
             promise.then(function(youTubePlayer) {
-              addChapterEventHandlers(node, youTubePlayer);
-              node.querySelector('.docs__poster--loader').addEventListener('click', function() {
-                performPlayActions(node, youTubePlayer, this);
+              addChapterEventHandlers(dom, youTubePlayer);
+                console.log(dom.querySelector(clickQuerySelector));
+                dom.querySelector(clickQuerySelector).addEventListener('click', function() {
+                performPlayActions(playerQuerySelector, youTubePlayer, this);
               });
             });
         });
 }
 
 function performPlayActions(videoExpand, youTubePlayer, posterHide) {
+    console.log(youTubePlayer);
   videoExpand.classList.add('docs__poster--wrapper--playing');
   scrollTo(document.body, 0, 300);
   youTubePlayer.playVideo();

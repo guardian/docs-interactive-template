@@ -6,7 +6,7 @@ import emailsignupURL from './lib/emailsignupURL';
 
 var shareFn = share('Interactive title', 'http://gu.com/p/URL', '#Interactive');
 
-export function init(el, context, config) {
+export function init(el, context, config, ) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
@@ -21,8 +21,10 @@ export function init(el, context, config) {
         getYouTubeVideoDuration(youTubeId, function(duration) {
             builder.querySelector('.docs__poster--play-button').setAttribute('data-duration', duration);
         });
-
-        pimpYouTubePlayer(youTubeId, builder.querySelector('#playerWrapper'), '100%', '100%');
+        //main video
+        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '#ytGuPlayer', '.docs__poster--loader');
+        //trailer
+        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '.doc-trailer__embed', '.docs--actions__trailer docs__shows-trailer', 1, );
         var hiddenDesc = builder.querySelector('.docs--standfirst-hidden');
         var showMoreBtn = builder.querySelector('.docs--standfirst-read-more');
 
