@@ -1,7 +1,7 @@
 import youTubeIframe from 'youtube-iframe-player';
 import reqwest from 'reqwest';
 
-export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelector, clickQuerySelector, autoplay = 0,  hasPoster = true) {
+export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelector, clickQuerySelector, autoplay = 0,  hasPoster = true, expandSelector, hideSelector) {
     youTubeIframe.init(function() {
         //preload youtube iframe API
         const promise = new Promise(function(resolve) {
@@ -19,20 +19,20 @@ export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelect
         });
 
             promise.then(function(youTubePlayer) {
-              addChapterEventHandlers(dom, youTubePlayer);
-                console.log(dom.querySelector(clickQuerySelector));
-                dom.querySelector(clickQuerySelector).addEventListener('click', function() {
-                performPlayActions(playerQuerySelector, youTubePlayer, this, hasPoster);
+              addChapterEventHandlers(youTubePlayer);
+                var myting =  dom.querySelector('#playerWrapper');
+                myting.addEventListener('click', function() {
+                performPlayActions(playerQuerySelector, youTubePlayer, this, hasPoster, expandSelector, hideSelector, dom);
               });
             });
         });
 }
 
-function performPlayActions(videoExpand, youTubePlayer, posterHide, hasPoster) {
-  videoExpand.classList.add('docs__poster--wrapper--playing');
+function performPlayActions(videoExpand, youTubePlayer, posterHide, hasPoster, expandSelector, hideSelector, dom) {
+  dom.querySelector('.docs__poster--loader').classList.add('docs__poster--wrapper--playing', 'docs__poster--hide');
   if(hasPoster) {scrollTo(document.body, 0, 300)}
   youTubePlayer.playVideo();
-  if(hasPoster) {posterHide.classList.add('docs__poster--hide')}
+  if(hasPoster) {dom.querySelector('.docs__poster--loader').classList.add('docs__poster--hide');}
 }
 
 function addChapterEventHandlers(node, youTubePlayer) {
@@ -40,7 +40,7 @@ function addChapterEventHandlers(node, youTubePlayer) {
   chapterBtns.forEach( function(chapterBtn) {
     chapterBtn.onclick = function(){
       var chapTime = parseInt(chapterBtn.getAttribute('data-sheet-timestamp'));
-      performPlayActions(node, youTubePlayer, node.querySelector('.docs__poster--loader'));
+      performPlayActions(node, youTubePlayer, node.querySelector('.docs__poster--loader'), dom);
       youTubePlayer.seekTo(chapTime, true);
     };
   });

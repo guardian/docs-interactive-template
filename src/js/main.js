@@ -22,7 +22,7 @@ export function init(el, context, config, ) {
             builder.querySelector('.docs__poster--play-button').setAttribute('data-duration', duration);
         });
         //main video
-        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '#ytGuPlayer', '.docs__poster--loader');
+        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '#playerWrapper', '.docs__poster--loader',0, true, '.docs__poster--loader', '.docs__poster--loader');
         //trailer
         pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '.doc-trailer__embed', '.docs--actions__trailer docs__shows-trailer', 1, false);
         var hiddenDesc = builder.querySelector('.docs--standfirst-hidden');
