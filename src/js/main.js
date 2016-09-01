@@ -24,7 +24,7 @@ export function init(el, context, config, ) {
         //main video
         pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '#ytGuPlayer', '.docs__poster--loader');
         //trailer
-        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '.doc-trailer__embed', '.docs--actions__trailer docs__shows-trailer', 1, );
+        pimpYouTubePlayer(youTubeId, builder, '100%', '100%', '.doc-trailer__embed', '.docs--actions__trailer docs__shows-trailer', 1, false);
         var hiddenDesc = builder.querySelector('.docs--standfirst-hidden');
         var showMoreBtn = builder.querySelector('.docs--standfirst-read-more');
 

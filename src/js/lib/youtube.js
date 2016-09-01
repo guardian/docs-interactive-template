@@ -1,8 +1,7 @@
 import youTubeIframe from 'youtube-iframe-player';
 import reqwest from 'reqwest';
 
-export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelector, clickQuerySelector, autoplay = 0) {
-    console.log("IN HERE "+dom.querySelector('#playerWrapper'));
+export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelector, clickQuerySelector, autoplay = 0,  hasPoster = true) {
     youTubeIframe.init(function() {
         //preload youtube iframe API
         const promise = new Promise(function(resolve) {
@@ -23,18 +22,17 @@ export function pimpYouTubePlayer(videoId, dom, height, width, playerQuerySelect
               addChapterEventHandlers(dom, youTubePlayer);
                 console.log(dom.querySelector(clickQuerySelector));
                 dom.querySelector(clickQuerySelector).addEventListener('click', function() {
-                performPlayActions(playerQuerySelector, youTubePlayer, this);
+                performPlayActions(playerQuerySelector, youTubePlayer, this, hasPoster);
               });
             });
         });
 }
 
-function performPlayActions(videoExpand, youTubePlayer, posterHide) {
-    console.log(youTubePlayer);
+function performPlayActions(videoExpand, youTubePlayer, posterHide, hasPoster) {
   videoExpand.classList.add('docs__poster--wrapper--playing');
-  scrollTo(document.body, 0, 300);
+  if(hasPoster) {scrollTo(document.body, 0, 300)}
   youTubePlayer.playVideo();
-  posterHide.classList.add('docs__poster--hide');
+  if(hasPoster) {posterHide.classList.add('docs__poster--hide')}
 }
 
 function addChapterEventHandlers(node, youTubePlayer) {
