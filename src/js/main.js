@@ -7,13 +7,12 @@ import emailsignupURL from './lib/emailsignupURL';
 // TODO remove once information is in sheet
 const tempSocialConfig = {
     title: 'Interactive title',
-    url: 'http://gu.com/p/URL',
     hashtag: '#Interactive',
     facebookImage: 'https://media.guim.co.uk/4bf1338c1496f82606c7c0bc41274e22cfe96425/358_294_3280_1968/1000.jpg',
     twitterImage: 'https://media.guim.co.uk/4bf1338c1496f82606c7c0bc41274e22cfe96425/358_294_3280_1968/1000.jpg',
 };
 
-const addShareHandler = (nodeList, {title, url, facebookImage, twitterImage, hashtag} = tempSocialConfig) => {
+const addShareHandler = (nodeList, {title, url=window.location, facebookImage, twitterImage, hashtag} = tempSocialConfig) => {
     const shareFn = share(title, url, facebookImage, twitterImage, hashtag);
     Array.from(nodeList).forEach(el => el.addEventListener('click', shareFn(el.getAttribute('data-network'))));
 };
