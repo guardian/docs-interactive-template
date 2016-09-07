@@ -4,19 +4,30 @@ import share from './lib/share';
 import sheetToDOM from './lib/sheettodom';
 import emailsignupURL from './lib/emailsignupURL';
 
-var shareFn = share('Interactive title', 'http://gu.com/p/URL', '#Interactive');
+// TODO remove once information is in sheet
+const tempSocialConfig = {
+    title: 'Interactive title',
+    hashtag: '#Interactive',
+    facebookImage: 'https://media.guim.co.uk/4bf1338c1496f82606c7c0bc41274e22cfe96425/358_294_3280_1968/1000.jpg',
+    twitterImage: 'https://media.guim.co.uk/4bf1338c1496f82606c7c0bc41274e22cfe96425/358_294_3280_1968/1000.jpg',
+};
+
+const addShareHandler = (nodeList, {title, url=window.location, facebookImage, twitterImage, hashtag} = tempSocialConfig) => {
+    const shareFn = share(title, url, facebookImage, twitterImage, hashtag);
+    Array.from(nodeList).forEach(el => el.addEventListener('click', shareFn(el.getAttribute('data-network'))));
+};
 
 export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
     sheetToDOM(config.sheetId, config.sheetName, builder, function callback(resp){
-        [].slice.apply(builder.querySelectorAll('.interactive-share')).forEach(shareEl => {
-            var network = shareEl.getAttribute('data-network');
-            shareEl.addEventListener('click', () => shareFn(network));
-        });
         const youTubeId = resp.sheets[config.sheetName][0].youTubeId;
         const youTubeTrailerId = resp.sheets[config.sheetName][0].youTubeTrailerId;
+
+        const socialConfig = resp.sheets[config.socialSheetName];
+        addShareHandler(builder.querySelectorAll('.interactive-share'), socialConfig);
+
         const chapters = resp.sheets[config.sheetChapter];
 
         chapters.sort((a,b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));

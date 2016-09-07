@@ -20,7 +20,8 @@ define([], function() {
                 'sheetName': 'gun-nation',
                 'sheetChapter': 'gun-nation-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
-                'emailListId': 3745
+                'emailListId': 3745,
+                'socialSheetName': 'gun-nation-social'
             };
 
             // Load CSS asynchronously
