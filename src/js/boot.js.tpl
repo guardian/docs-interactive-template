@@ -15,13 +15,15 @@ define([], function() {
             // Loading message while we fetch JS / CSS
             el.innerHTML = '<div style="font-size: 24px; text-align: center; padding: 72px 0; font-family: \'Guardian Egyptian Web\',Georgia,serif;">Loading…</div>';
 
-            config = {
-                'assetPath': '<%= assetPath %>',
+            const extraConfig = {
+                'assetPath': '',
                 'sheetName': 'gun-nation',
                 'sheetChapter': 'gun-nation-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
                 'emailListId': 3745
             };
+
+            config !== undefined ? Object.assign(config, extraConfig) : config = extraConfig;
 
             // Load CSS asynchronously
             window.setTimeout(function() {
