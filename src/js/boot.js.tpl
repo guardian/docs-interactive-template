@@ -15,15 +15,17 @@ define([], function() {
             // Loading message while we fetch JS / CSS
             el.innerHTML = '<div style="font-size: 24px; text-align: center; padding: 72px 0; font-family: \'Guardian Egyptian Web\',Georgia,serif;">Loading…</div>';
 
-            const extraConfig = {
-                'assetPath': '',
+            const interactiveConfig = {
+                'assetPath': '<%= assetPath %>',
                 'sheetName': 'gun-nation',
                 'sheetChapter': 'gun-nation-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
                 'emailListId': 3745
             };
 
-            config !== undefined ? Object.assign(config, extraConfig) : config = extraConfig;
+            if (config) {
+                Object.assign(interactiveConfig, config);
+            }
 
             // Load CSS asynchronously
             window.setTimeout(function() {
@@ -32,7 +34,7 @@ define([], function() {
 
             // Load JS and init
             require(['<%= assetPath %>/main.js'], function(main) {
-                main.init(el, context, config, mediator);
+                main.init(el, context, interactiveConfig, mediator);
             }, function(err) { console.error('Error loading boot.', err); });
         }
     };
