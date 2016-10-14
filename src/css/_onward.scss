@@ -161,11 +161,11 @@
     .film-title {
       display: block;
       margin: 11px 0 11px;
-      @include title-desertfire;
       width: 235px;
       height: 38px;
       position: relative;
-      font-size: 0;
+      font-size: 40px;
+      font-weight: 100;
       @include mq(mobileLandscape) {
         margin-top: 21px;
         line-height: 42px;
