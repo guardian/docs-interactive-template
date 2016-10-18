@@ -63,7 +63,6 @@ export function init(el, context, config) {
             shareEl.addEventListener('click', () => shareFn(network));
         });
 
-
         const youTubeId = resp.sheets[config.sheetName][0].youTubeId;
         const youTubeTrailerId = resp.sheets[config.sheetName][0].youTubeTrailerId;
 
@@ -72,12 +71,6 @@ export function init(el, context, config) {
 
         getYouTubeVideoDuration(youTubeTrailerId, function(duration) {
             builder.querySelector('.docs--actions__trailer__duration').textContent = duration;
-        });
-
-        getYouTubeVideoDuration(youTubeId, function(duration) {
-            setData(builder.querySelector('.docs__poster--play-button'), {
-                duration: duration
-            });
         });
 
         const showAboutBtn = builder.querySelector('.docs--sponsor-aboutfilms');
@@ -130,19 +123,42 @@ export function init(el, context, config) {
             src: emailsignupURL(config.emailListId)
         });
 
-        builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
-            player.play();
-        });
+        const autoplayReferrers = [
+            /^https?:\/\/localhost:8000/,
+            /^https?:\/\/m.code.dev-theguardian.com/,
+            /^https?:\/\/www.theguardian.com/
+        ];
 
-        setStyles(builder.querySelector('.docs__poster--image'), {
-            'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
-        });
+        const shouldAutoPlay = autoplayReferrers.find(ref => ref.test(document.referrer));
+
+        //perform these actions if not eligible for auto-play
+        if (! shouldAutoPlay) {
+            getYouTubeVideoDuration(youTubeId, function(duration) {
+                setData(builder.querySelector('.docs__poster--play-button'), {
+                    duration: duration
+                });
+            });
+
+            builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
+                const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
+                player.play();
+            });
+
+            setStyles(builder.querySelector('.docs__poster--image'), {
+                'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
+            });
+        }
 
         setAttributes(builder.querySelector('.cutout'), {
             src: resp.sheets[config.sheetName][0].nextDocImageUrl
         });
 
         el.parentNode.replaceChild(builder, el);
+
+        // all elements are on the DOM now, let's autoplay
+        if (shouldAutoPlay) {
+            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
+            player.play();
+        }
     });
 }
