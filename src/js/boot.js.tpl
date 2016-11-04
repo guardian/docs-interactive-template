@@ -17,8 +17,8 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'sheetName': 'gun-nation',
-                'sheetChapter': 'gun-nation-chapters',
+                'sheetName': 'on-the-road',
+                'sheetChapter': 'on-the-road-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
                 'emailListId': 3745
             };
