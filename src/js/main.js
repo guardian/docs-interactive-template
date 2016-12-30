@@ -4,8 +4,11 @@ import share from './lib/share';
 import sheetToDomInnerHtml from './lib/sheettodom';
 import emailsignupURL from './lib/emailsignupURL';
 import {setAttributes, setData, setStyles} from './lib/dom';
+import sheetNameFromShortId from './lib/sheetnamefromshortid';
 
-function initChapters(rootEl, config, chapters) {
+function initChapters(rootEl, chapters, chapterSheetName) {
+
+    console.log(chapters);
     chapters.sort((a,b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
 
     chapters.forEach(function(chapter, index){
@@ -18,7 +21,7 @@ function initChapters(rootEl, config, chapters) {
 
     const compressString = (str) => str.replace(/[\s+|\W]/g, '').toLowerCase();
 
-    const getDataLinkName = (title) => `${compressString(config.sheetChapter)} | ${title}`;
+    const getDataLinkName = (chapterSheetName, title) => `${compressString(chapterSheetName)} | ${title}`;
 
     const ul = document.createElement('ul');
     ul.classList.add('docs--chapters');
@@ -55,8 +58,9 @@ export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
-    sheetToDomInnerHtml(config.sheetId, config.sheetName, builder, function callback(resp){
-        var shareFn = share(resp.sheets[config.sheetName][0].title, window.location);
+    const sheetName = sheetNameFromShortId(config.docsArray, config.page.shortUrlId);
+    sheetToDomInnerHtml(config.sheetId, sheetName, builder, function callback(resp){
+        var shareFn = share(resp.sheets[sheetName][0].title, window.location);
 
         [].slice.apply(builder.querySelectorAll('.interactive-share')).forEach(shareEl => {
             var network = shareEl.getAttribute('data-network');
@@ -64,12 +68,12 @@ export function init(el, context, config) {
         });
 
 
-        const youTubeId = resp.sheets[config.sheetName][0].youTubeId;
-        const youTubeTrailerId = resp.sheets[config.sheetName][0].youTubeTrailerId;
+        const youTubeId = resp.sheets[sheetName][0].youTubeId;
 
-        const chapters = resp.sheets[config.sheetChapter];
-        initChapters(builder, config, chapters);
-        
+        const chaptersSheetName = `${sheetName}-chapters`;
+        const chaptersResp = resp.sheets[chaptersSheetName];
+        initChapters(builder, chaptersResp, chaptersSheetName);
+
         getYouTubeVideoDuration(youTubeId, function(duration) {
             setData(builder.querySelector('.docs__poster--play-button'), {
                 duration: duration
@@ -127,17 +131,19 @@ export function init(el, context, config) {
         });
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
+            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chaptersResp, config);
             player.play();
         });
 
         setStyles(builder.querySelector('.docs__poster--image'), {
-            'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
+            'background-image': `url('${resp.sheets[sheetName][0].backgroundImageUrl}')`
         });
-
+        
         // setAttributes(builder.querySelector('.cutout'), {
         //     src: resp.sheets[config.sheetName][0].nextDocImageUrl
         // });
+
+
 
         el.parentNode.replaceChild(builder, el);
     });

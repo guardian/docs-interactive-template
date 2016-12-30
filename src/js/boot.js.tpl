@@ -17,10 +17,14 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'sheetName': 'desert-fire',
-                'sheetChapter': 'desert-fire-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
-                'emailListId': 3745
+                'emailListId': 3745,
+                'docsArray':
+                [
+                  ["/p/5267g", "gun-nation"],
+                  ["/p/564f6", "desert-fire"],
+                  ["/p/5amdt", "radical-brownies"]
+                ]
             };
 
             if (config) {
