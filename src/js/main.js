@@ -8,7 +8,6 @@ import sheetNameFromShortId from './lib/sheetnamefromshortid';
 
 function initChapters(rootEl, chapters, chapterSheetName) {
 
-    console.log(chapters);
     chapters.sort((a,b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
 
     chapters.forEach(function(chapter, index){
@@ -27,7 +26,7 @@ function initChapters(rootEl, chapters, chapterSheetName) {
     ul.classList.add('docs--chapters');
 
     chapters.forEach( function(chapter, index){
-        const dataLinkName = getDataLinkName(chapter.chapterTitle);
+        const dataLinkName = getDataLinkName(chapterSheetName, chapter.chapterTitle);
         const li = document.createElement('li');
 
         setAttributes(li, {
@@ -69,6 +68,7 @@ export function init(el, context, config) {
 
 
         const youTubeId = resp.sheets[sheetName][0].youTubeId;
+        const youTubeTrailerId = resp.sheets[sheetName][0].youTubeTrailerId;
 
         const chaptersSheetName = `${sheetName}-chapters`;
         const chaptersResp = resp.sheets[chaptersSheetName];
@@ -138,7 +138,7 @@ export function init(el, context, config) {
         setStyles(builder.querySelector('.docs__poster--image'), {
             'background-image': `url('${resp.sheets[sheetName][0].backgroundImageUrl}')`
         });
-        
+
         // setAttributes(builder.querySelector('.cutout'), {
         //     src: resp.sheets[config.sheetName][0].nextDocImageUrl
         // });
