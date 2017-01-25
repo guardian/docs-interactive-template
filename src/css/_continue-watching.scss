@@ -64,6 +64,12 @@
             font-size: 22px;
             font-weight: 600;
             text-transform: lowercase;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     &__contents {
