@@ -24,7 +24,7 @@
         display: inline-block;
         vertical-align: top;
         padding-bottom: 12px;
-        
+
         @include mq(weirdness) {
             width: 340px;
         }
@@ -119,14 +119,10 @@
             .supporter-info {
                 position: relative;
                 line-height: 22px;
-                @include icon-info;
-                cursor: pointer;
             }
             .supporter-logo {
-                img {
-                    margin-top: 1px;
-                    width: 108px;
-                    height: 45px;
+                svg {
+                    margin-top: 5px;
                 }
             }
             @include mq(leftCol) {
