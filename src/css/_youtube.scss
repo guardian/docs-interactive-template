@@ -178,6 +178,7 @@
         transform: scale(0.8);
         @include mq(phablet) {
             transform: scale(1);
+            transform-origin: center;
             &:hover {
                 transform: scale(1.1);
             }
