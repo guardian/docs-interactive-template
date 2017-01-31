@@ -9,21 +9,30 @@
 }
 
 .docs__poster {
+    &--wrapper,
+    &--title-wrapper {
+        height: 460px;
+        @include mq(tablet) {
+            height: 500px;
+        }
+        @include mq(desktop) {
+            height: 530px;
+        }
+        @include mq(leftCol) {
+            height: 618px;
+        }
+        @include mq(wide) {
+            height: 706px;
+        }
+    }
     &--wrapper {
         position: relative;
         display: block;
         width: 100%;
-        height: 540px;
-        transition: height 300ms;
         cursor: pointer;
-        &--playing {
-            // 103px is the header height (48) + chapters height (55)
-            height: calc(100vh - 103px);
-        }
     }
     &--title-wrapper {
         max-width: 1300px;
-        height: 540px;
         z-index: 10;
         position: relative;
         margin: 0 auto;
@@ -89,8 +98,20 @@
     &--gradient-fill {
         position: absolute;
         width: 100vw;
-        height: 540px;
         background-image: radial-gradient(circle at 23% 54%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+        height: 460px;
+        @include mq(tablet) {
+            height: 500px;
+        }
+        @include mq(desktop) {
+            height: 530px;
+        }
+        @include mq(leftCol) {
+            height: 618px;
+        }
+        @include mq(wide) {
+            height: 706px;
+        }
     }
     &--logo,
     &--title {
