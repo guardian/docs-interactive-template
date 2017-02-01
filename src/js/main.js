@@ -68,7 +68,6 @@ export function init(el, context, config) {
 
 
         const youTubeId = resp.sheets[sheetName][0].youTubeId;
-        const youTubeTrailerId = resp.sheets[sheetName][0].youTubeTrailerId;
         const chaptersSheetName = `${sheetName}-chapters`;
         const chaptersResp = resp.sheets[chaptersSheetName];
         initChapters(builder, chaptersResp, chaptersSheetName);
@@ -141,7 +140,7 @@ export function init(el, context, config) {
         const shouldAutoPlay = autoplayReferrers.find(ref => ref.test(document.referrer));
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-           const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
+           const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
            player.play();
         });
 
@@ -151,7 +150,7 @@ export function init(el, context, config) {
             builder.querySelector('.docs__poster--title').classList.add('will-autoplay');
             autoplayTimeout = setTimeout(()=> {
               builder.querySelector('.docs__poster--title').classList.remove('will-autoplay');
-              const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
+              const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
               player.play();
             }, 8000);
         }
@@ -171,7 +170,7 @@ export function init(el, context, config) {
       const windowHeight = window.innerHeight;
       const faders = document.querySelectorAll('.should-fade-in');
 
-      if (s==0 && windowHeight<bodyHeight) {
+      if (s===0 && windowHeight<bodyHeight) {
         for (let i = 0; i < faders.length; i++) {
           faders[i].classList.remove('fade-in');
         }

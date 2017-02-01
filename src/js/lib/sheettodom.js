@@ -15,8 +15,8 @@ export function sheetToDomInnerHtml(sheetID, sheetName, el, callback) {
             //get list of elements with data-sheet-attribute
             for (const node of el.querySelectorAll('[data-sheet-attribute]')) {
                 const value = node.getAttribute('data-sheet-attribute');
-                if(value.startsWith("coming-soon-")){
-                    node.innerHTML = resp.sheets['coming-soon'][0][value.split("coming-soon-")[1]];
+                if(value.startsWith('coming-soon-')){
+                    node.innerHTML = resp.sheets['coming-soon'][0][value.split('coming-soon-')[1]];
                 }
                 else {
                     node.innerHTML = resp.sheets[sheetName][0][value];
