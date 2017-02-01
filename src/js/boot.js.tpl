@@ -17,8 +17,7 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'sheetName': 'radical-brownies',
-                'sheetChapter': 'radical-brownies-chapters',
+                'comingSoonSheetName': 'coming-soon',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
                 'docsArray':
                 [

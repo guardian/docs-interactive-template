@@ -107,7 +107,7 @@ export function init(el, context, config) {
         });
 
         setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${resp.sheets[sheetName][0].comingSoonImageUrl}')`
+            'background-image': `url('${resp.sheets[config.comingSoonSheetName][0].image}')`
         });
 
 
