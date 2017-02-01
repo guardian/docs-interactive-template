@@ -20,6 +20,12 @@ define([], function() {
                 'sheetName': 'radical-brownies',
                 'sheetChapter': 'radical-brownies-chapters',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
+                'docsArray':
+                [
+                  ["/p/5267g", "gun-nation"],
+                  ["/p/564f6", "desert-fire"],
+                  ["/p/5amdt", "radical-brownies"]
+                ],
                 'emailListId': 3745
             };
 

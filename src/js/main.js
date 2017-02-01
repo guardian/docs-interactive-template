@@ -5,8 +5,9 @@ import sheetToDomInnerHtml from './lib/sheettodom';
 import emailsignupURL from './lib/emailsignupURL';
 import { setAttributes, setData, setStyles } from './lib/dom';
 import { isMobile } from './lib/detect';
+import sheetNameFromShortId from './lib/sheetnamefromshortid';
 
-function initChapters(rootEl, config, chapters) {
+function initChapters(rootEl, chapters, chapterSheetName) {
     chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
 
     chapters.forEach(function(chapter, index) {
@@ -19,13 +20,13 @@ function initChapters(rootEl, config, chapters) {
 
     const compressString = (str) => str.replace(/[\s+|\W]/g, '').toLowerCase();
 
-    const getDataLinkName = (title) => `${compressString(config.sheetChapter)} | ${title}`;
+    const getDataLinkName = (chapterSheetName, title) => `${compressString(chapterSheetName)} | ${title}`;
 
     const ul = document.createElement('ul');
     ul.classList.add('docs--chapters');
 
     chapters.forEach(function(chapter, index) {
-        const dataLinkName = getDataLinkName(chapter.chapterTitle);
+        const dataLinkName = getDataLinkName(chapterSheetName, chapter.chapterTitle);
         const li = document.createElement('li');
 
         setAttributes(li, {
@@ -56,8 +57,9 @@ export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
-    sheetToDomInnerHtml(config.sheetId, config.sheetName, builder, function callback(resp) {
-        var shareFn = share(resp.sheets[config.sheetName][0].title, window.location);
+    const sheetName = sheetNameFromShortId(config.docsArray, config.page.shortUrlId);
+    sheetToDomInnerHtml(config.sheetId, sheetName, builder, function callback(resp) {
+        var shareFn = share(resp.sheets[sheetName][0].title, window.location);
 
         [].slice.apply(builder.querySelectorAll('.interactive-share')).forEach(shareEl => {
             var network = shareEl.getAttribute('data-network');
@@ -65,10 +67,11 @@ export function init(el, context, config) {
         });
 
 
-        const youTubeId = resp.sheets[config.sheetName][0].youTubeId;
-
-        const chapters = resp.sheets[config.sheetChapter];
-        initChapters(builder, config, chapters);
+        const youTubeId = resp.sheets[sheetName][0].youTubeId;
+        const youTubeTrailerId = resp.sheets[sheetName][0].youTubeTrailerId;
+        const chaptersSheetName = `${sheetName}-chapters`;
+        const chaptersResp = resp.sheets[chaptersSheetName];
+        initChapters(builder, chaptersResp, chaptersSheetName);
 
         const showAboutBtn = builder.querySelector('#show-about-these-films');
         const hideAboutBtn = builder.querySelector('.docs--about-wrapper');
@@ -93,35 +96,36 @@ export function init(el, context, config) {
         });
 
 
-
-        setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${resp.sheets[config.sheetName][0].comingSoonImageUrl}')`
+        builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
+            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chaptersResp, config);
+            player.play();
         });
+
 
         setStyles(builder.querySelector('.docs__poster--image'), {
-           'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
+            'background-image': `url('${resp.sheets[sheetName][0].backgroundImageUrl}')`
         });
 
+        setStyles(builder.querySelector('.coming-soon-background'), {
+            'background-image': `url('${resp.sheets[sheetName][0].comingSoonImageUrl}')`
+        });
+
+
         setAttributes(builder.querySelector('.poster__image--one'), {
-            src: resp.sheets[config.sheetName][0].nextDocOneImage
+            src: resp.sheets[sheetName][0].nextDocOneImage
         });
 
         setAttributes(builder.querySelector('.poster__image--two'), {
-            src: resp.sheets[config.sheetName][0].nextDocTwoImage
+            src: resp.sheets[sheetName][0].nextDocTwoImage
         });
 
-        setAttributes(builder.querySelectorAll('.nextDocOneLinkURL')[0], {
-            href: resp.sheets[config.sheetName][0].nextDocOneLink
-        });
-        setAttributes(builder.querySelectorAll('.nextDocOneLinkURL')[1], {
-            href: resp.sheets[config.sheetName][0].nextDocOneLink
+        setAttributes(builder.querySelector('.nextDocOneLinkURL'), {
+            href: resp.sheets[sheetName][0].nextDocOneLink
+
         });
 
-        setAttributes(builder.querySelectorAll('.nextDocTwoLinkURL')[0], {
-            href: resp.sheets[config.sheetName][0].nextDocTwoLink
-        });
-        setAttributes(builder.querySelectorAll('.nextDocTwoLinkURL')[1], {
-            href: resp.sheets[config.sheetName][0].nextDocTwoLink
+        setAttributes(builder.querySelector('.nextDocTwoLinkURL'), {
+            href: resp.sheets[sheetName][0].nextDocTwoLink
         });
 
         el.parentNode.replaceChild(builder, el);
