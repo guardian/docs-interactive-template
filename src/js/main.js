@@ -5,6 +5,7 @@ import sheetToDomInnerHtml from './lib/sheettodom';
 import emailsignupURL from './lib/emailsignupURL';
 import { setAttributes, setData, setStyles } from './lib/dom';
 import { isMobile } from './lib/detect';
+import reqwest from 'reqwest';
 
 function initChapters(rootEl, config, chapters) {
     chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
@@ -94,27 +95,21 @@ export function init(el, context, config) {
            'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
         });
 
-        setAttributes(builder.querySelector('.poster__image--one'), {
-            src: resp.sheets[config.sheetName][0].nextDocOneImage
-        });
-
-        setAttributes(builder.querySelector('.poster__image--two'), {
-            src: resp.sheets[config.sheetName][0].nextDocTwoImage
-        });
-
-        setAttributes(builder.querySelectorAll('.nextDocOneLinkURL')[0], {
-            href: resp.sheets[config.sheetName][0].nextDocOneLink
-        });
-        setAttributes(builder.querySelectorAll('.nextDocOneLinkURL')[1], {
-            href: resp.sheets[config.sheetName][0].nextDocOneLink
-        });
-
-        setAttributes(builder.querySelectorAll('.nextDocTwoLinkURL')[0], {
-            href: resp.sheets[config.sheetName][0].nextDocTwoLink
-        });
-        setAttributes(builder.querySelectorAll('.nextDocTwoLinkURL')[1], {
-            href: resp.sheets[config.sheetName][0].nextDocTwoLink
-        });
+        let snapLinks = ['One', 'Two', 'Three', 'Four'];
+        for (let i = 0; i < snapLinks.length; i++) {
+            let snapURL = resp.sheets[config.sheetName][0]['nextSnap' + snapLinks[i]];
+            let regex = new RegExp("[\\?&]gu-snapUri=([^&#]*)");
+            let jsonURL = decodeURIComponent(regex.exec(snapURL)[1]);
+            reqwest({
+                'url': jsonURL,
+                'type': 'json',
+                'crossOrigin': true,
+                'success': snapJSON => {
+                    let el = document.querySelector('section#more-documentaries .nextSnap' + snapLinks[i]);
+                    el.innerHTML = snapJSON.html;
+                }
+            });
+        }
 
         el.parentNode.replaceChild(builder, el);
 
