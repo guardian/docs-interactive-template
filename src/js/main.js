@@ -58,7 +58,7 @@ export function init(el, context, config) {
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
     const sheetName = sheetNameFromShortId(config.docsArray, config.page.shortUrlId);
-    sheetToDomInnerHtml(config.sheetId, sheetName, builder, function callback(resp) {
+    sheetToDomInnerHtml(config.sheetId, sheetName, builder, config.comingSoonSheetName, function callback(resp) {
         var shareFn = share(resp.sheets[sheetName][0].title, window.location);
 
         [].slice.apply(builder.querySelectorAll('.interactive-share')).forEach(shareEl => {
