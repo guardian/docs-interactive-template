@@ -85,8 +85,6 @@ export function init(el, context, config) {
             src: emailsignupURL(config.emailListId)
         });
 
-
-
         setStyles(builder.querySelector('.coming-soon-background'), {
             'background-image': `url('${resp.sheets[config.sheetName][0].comingSoonImageUrl}')`
         });
@@ -95,23 +93,21 @@ export function init(el, context, config) {
            'background-image': `url('${resp.sheets[config.sheetName][0].backgroundImageUrl}')`
         });
 
-        let snapLinks = ['One', 'Two', 'Three', 'Four'];
-        for (let i = 0; i < snapLinks.length; i++) {
-            let snapURL = resp.sheets[config.sheetName][0]['nextSnap' + snapLinks[i]];
-            let regex = new RegExp("[\\?&]gu-snapUri=([^&#]*)");
-            let jsonURL = decodeURIComponent(regex.exec(snapURL)[1]);
+        el.parentNode.replaceChild(builder, el);
+
+        const snapLinks = ['One', 'Two', 'Three', 'Four'];
+        snapLinks.forEach((snapLink) => {
+            const jsonURL = resp.sheets[config.sheetName][0]['jsonSnap' + snapLink];
             reqwest({
                 'url': jsonURL,
                 'type': 'json',
                 'crossOrigin': true,
                 'success': snapJSON => {
-                    let el = document.querySelector('section#more-documentaries .nextSnap' + snapLinks[i]);
+                    const el = builder.querySelector('section#more-documentaries .nextSnap' + snapLink);
                     el.innerHTML = snapJSON.html;
                 }
             });
-        }
-
-        el.parentNode.replaceChild(builder, el);
+        });
 
         const autoplayReferrers = [
             /^https?:\/\/localhost:8000/,
