@@ -106,8 +106,12 @@
                 font-weight: 400;
                 padding: 0 8px 0 12px;
                 &:hover {
-                    color: #fff;
-                    background-color: #282828;
+                    color: #333;
+                    background-color: #AAD8F1;
+                    border-color: #AAD8F1;
+                    svg path {
+                        fill: currentColor;
+                    }
                 }
                 svg {
                     width: 17px;
