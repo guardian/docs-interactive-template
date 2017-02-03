@@ -12,17 +12,24 @@
     &--wrapper,
     &--title-wrapper {
         height: 460px;
+        max-height: calc(100vh - 96px);
         @include mq(tablet) {
             height: 500px;
         }
         @include mq(desktop) {
-            height: 530px;
+            height: 551px;
         }
         @include mq(leftCol) {
-            height: 618px;
+            height: 620px;
+            &--playing {
+                height: 641px;
+            }
         }
         @include mq(wide) {
-            height: 706px;
+            height: 680px;
+            &--playing {
+                height: 731px;
+            }
         }
     }
     &--wrapper {
@@ -100,17 +107,24 @@
         width: 100vw;
         background-image: radial-gradient(circle at 23% 54%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
         height: 460px;
+        max-height: calc(100vh - 96px);
         @include mq(tablet) {
             height: 500px;
         }
         @include mq(desktop) {
-            height: 530px;
+            height: 551px;
         }
         @include mq(leftCol) {
-            height: 618px;
+            height: 620px;
+            &--playing {
+                height: 641px;
+            }
         }
         @include mq(wide) {
-            height: 706px;
+            height: 680px;
+            &--playing {
+                height: 731px;
+            }
         }
     }
     &--logo,
