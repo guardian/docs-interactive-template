@@ -6,6 +6,7 @@ import emailsignupURL from './lib/emailsignupURL';
 import { setAttributes, setData, setStyles } from './lib/dom';
 import { isMobile } from './lib/detect';
 import reqwest from 'reqwest';
+import find from 'lodash.find';
 
 function initChapters(rootEl, config, chapters) {
     chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
@@ -117,7 +118,7 @@ export function init(el, context, config) {
         ];
 
 
-        const shouldAutoPlay = autoplayReferrers.find(ref => ref.test(document.referrer));
+        const shouldAutoPlay = find(autoplayReferrers, (ref) => ref.test(document.referrer));
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
             const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chapters, config);
