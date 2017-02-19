@@ -119,17 +119,16 @@
             }
         }
         &__supporter {
+            opacity: 0.8;
             .supporter-info {
                 position: relative;
                 line-height: 22px;
-                @include icon-info;
-                cursor: pointer;
             }
             .supporter-logo {
                 img {
                     margin-top: 1px;
                     width: 108px;
-                    height: 45px;
+                    height: 26px;
                 }
             }
             @include mq(leftCol) {

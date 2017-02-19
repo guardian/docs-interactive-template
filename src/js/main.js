@@ -23,13 +23,7 @@ export function init(el, context, config) {
 
 
         const youTubeId = resp.sheets[sheetName][0].youTubeId;
-        // const chaptersSheetName = `${sheetName}-chapters`;
-        // const chaptersResp = resp.sheets[chaptersSheetName];
-        // initChapters(builder, chaptersResp, chaptersSheetName);
 
-        const showAboutBtn = builder.querySelector('#show-about-these-films');
-        const hideAboutBtn = builder.querySelector('.docs--about-wrapper');
-        const aboutBody = builder.querySelector('.docs--about-body');
         const hiddenDesc = builder.querySelector('#intro-expansion');
         const showMoreBtn = builder.querySelector('#intro-expand-btn');
 
@@ -38,15 +32,9 @@ export function init(el, context, config) {
             hiddenDesc.classList.toggle('expanded');
         };
 
-        //Show and hide the about these films overlay
-        showAboutBtn.addEventListener('click', () => hideAboutBtn.classList.add('docs--show-about'));
-        hideAboutBtn.addEventListener('click', () => hideAboutBtn.classList.remove('docs--show-about'));
-        aboutBody.addEventListener('click', (e) => e.stopPropagation());
-
         const emailIframe = builder.querySelector('.js-email-sub__iframe');
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-            // const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
             player.play();
         });
 
