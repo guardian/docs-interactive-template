@@ -3,7 +3,7 @@ import reqwest from 'reqwest';
 import startsWith from 'lodash.startswith';
 
 
-export function sheetToDomInnerHtml(sheetID, sheetName, el, comingSoonSheetName, callback) {
+export function sheetToDomInnerHtml(sheetID, sheetName, el, callback) {
 
     var sheet = sheetUrl(sheetID);
 
@@ -17,12 +17,7 @@ export function sheetToDomInnerHtml(sheetID, sheetName, el, comingSoonSheetName,
             for (const node of el.querySelectorAll('[data-sheet-attribute]')) {
                 const value = node.getAttribute('data-sheet-attribute');
 
-                if(startsWith(value, `${comingSoonSheetName}-`)){
-                    node.innerHTML = resp.sheets[comingSoonSheetName][0][value.split(`${comingSoonSheetName}-`)[1]];
-                }
-                else {
-                    node.innerHTML = resp.sheets[sheetName][0][value];
-                }
+                node.innerHTML = resp.sheets[sheetName][0][value];
             }
             callback(resp);
 

@@ -17,13 +17,11 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'comingSoonSheetName': 'coming-soon',
                 'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
                 'docsArray':
                 [
                   ["culture/ng-interactive/2017/feb/17/the-intelligence-explosion", "intelligence-explosion"]
-                ],
-                'emailListId': 3745
+                ]
             };
 
             if (config) {

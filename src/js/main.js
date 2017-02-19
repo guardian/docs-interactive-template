@@ -13,7 +13,7 @@ export function init(el, context, config) {
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
     const sheetName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
-    sheetToDomInnerHtml(config.sheetId, sheetName, builder, config.comingSoonSheetName, function callback(resp) {
+    sheetToDomInnerHtml(config.sheetId, sheetName, builder, function callback(resp) {
         var shareFn = share(resp.sheets[sheetName][0].title, window.location);
 
         [].slice.apply(builder.querySelectorAll('.interactive-share')).forEach(shareEl => {
@@ -45,11 +45,6 @@ export function init(el, context, config) {
 
         const emailIframe = builder.querySelector('.js-email-sub__iframe');
 
-        setAttributes(emailIframe, {
-            src: emailsignupURL(config.emailListId)
-        });
-
-
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
             // const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
             player.play();
@@ -58,10 +53,6 @@ export function init(el, context, config) {
 
         setStyles(builder.querySelector('.docs__poster--image'), {
             'background-image': `url('${resp.sheets[sheetName][0].backgroundImageUrl}')`
-        });
-
-        setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${resp.sheets[config.comingSoonSheetName][0].image}')`
         });
 
         el.parentNode.replaceChild(builder, el);
