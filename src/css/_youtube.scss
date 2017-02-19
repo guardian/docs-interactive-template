@@ -151,15 +151,15 @@
     &--logo {
         width: 164px;
         height: 92px;
-        margin-top: 4px;
-        @include g-documentaries-logo();
+        margin-top: 6px;
+        @include original-drama-logo();
         position: absolute;
-        top: 0;
         z-index: 5;
         transform-origin: top left;
-        transform: scale(0.8);
+        transform: scale(0.68);
         @include mq(phablet) {
-            transform: scale(1);
+            transform: scale(0.85);
+            margin-left: -5px;
         }
     }
     &--title {
