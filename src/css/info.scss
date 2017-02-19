@@ -24,7 +24,7 @@
         display: inline-block;
         vertical-align: top;
         padding-bottom: 12px;
-        
+
         @include mq(weirdness) {
             width: 340px;
         }
@@ -41,6 +41,9 @@
         }
         @include mq(wide) {
             padding-left: 230px;
+        }
+        &__standfirst {
+            color: $c-original-dramas;
         }
         &__expansion {
             display: none;
