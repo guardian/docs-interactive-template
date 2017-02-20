@@ -47,7 +47,6 @@
     }
   },
   "dependencies": {
-    "jspm": "^0.16.34",
-    "lodash.startswith": "^4.2.1"
+    "jspm": "^0.16.34"
   }
 }
