@@ -82,3 +82,7 @@ a {
         transform: translateX(calc(100%));
     }
 }
+
+html {
+    min-height: calc(100% + 36px);
+}
