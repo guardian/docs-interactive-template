@@ -1,36 +1,120 @@
 #more-documentaries {
+    position: relative;
     .fc-container__inner {
         border-top: 1px solid #676767;
+        .badge {
+            display: none;
+            @include mq(leftCol) {
+                display: block;
+                margin-top: 0px;
+                width: 99px;
+                height: 82px;
+            }
+            .original-drama-badge {
+                @include original-drama-logo();
+                &:after {
+                    width: 99px;
+                    height: 82px;
+                    background-size: 100%;
+                    margin-bottom: 6px;
+                }
+            }
+        }
         .fc-container__header__title {
+            line-height: 22px;
             color: #999;
             font-weight: 600;
+            margin-bottom: 6px;
+            @include mq(desktop) {
+                margin-bottom: 0;
+            }
             &:hover a {
                 color: currentColor;
             }
         }
+        @include mq(leftCol) {
+            .fc-container__header {
+                position: absolute;
+                .fc-container__header__title {
+                    clear: both;
+                }
+            }
+        }
     }
-    .fc-slice-wrapper {
-        .fc-slice:not(.l-row--cols-1) {
+    .video-cards {
+        font-size: 0;
+        display: block;
+        clear: both;
+        @include mq(leftCol) {
+            margin-left: 160px;
+            margin-top: 4px;
+        }
+        @include mq(wide) {
+            margin-left: 240px;
+        }
+        .card {
+            margin-bottom: 24px;
             display: block;
-            font-size: 0;
-            .fc-slice__item {
+            max-width: 380px;
+            @include mq(mobileLandscape) {
+                width: calc(50% - 10px);
                 display: inline-block;
                 vertical-align: top;
-                padding-top: 0;
-                margin-bottom: 20px;
-                width: 50%;
-                @include mq(phablet) {
-                    width: 25%;
+                &:first-child {
+                    padding-right: 10px;
                 }
-                .fc-item,
-                .fc-item:hover {
-                    background-color: transparent;
+                &:last-child {
+                    padding-left: 10px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 1px;
+                        height: 100%;
+                        background-color: #333;
+                    }
                 }
-                &+.fc-slice__item:before {
-                    border-left: 1px solid #333;
+            }
+            &, &:hover {
+                text-decoration: none;
+            }
+            &__image {
+                position: relative;
+                img {
+                    max-width: 100%;
                 }
-                .doc-card:hover {
-                    opacity: 0.8;
+                .play {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    @include icon-play-small();
+                    transition: all 360ms;
+                }
+            }
+            &__text {
+                padding-top: 2px;
+                h6,
+                p {
+                    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                h6 {
+                    font-weight: 600;
+                    color: $c-original-dramas;
+                }
+                p {
+                    font-weight: 400;
+                    color: #DCDCDC;
+                }
+            }
+            &:hover {
+                .play {
+                    transform: translate3d(-50%, -50%, 0) scale(1.1);
                 }
             }
         }

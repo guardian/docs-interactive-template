@@ -152,9 +152,9 @@
         width: 164px;
         height: 92px;
         margin-top: 6px;
-        @include original-drama-logo();
         position: absolute;
         z-index: 5;
+        @include original-drama-logo();
         transform-origin: top left;
         transform: scale(0.68);
         @include mq(phablet) {
