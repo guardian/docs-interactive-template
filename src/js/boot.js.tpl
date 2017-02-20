@@ -17,7 +17,7 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
+                'sheetId': '1vlKHk5kyNhytcGJQs4XU5dJCGZjY4DSStgkQIkN0BA4',
                 'docsArray':
                 [
                   ["culture/ng-interactive/2017/feb/17/the-intelligence-explosion", "intelligence-explosion"]
