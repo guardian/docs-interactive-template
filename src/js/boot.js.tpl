@@ -25,7 +25,7 @@ define([], function() {
                   ["world/ng-interactive/2016/oct/14/desert-fire-the-world-cup-rebels-of-kurdistan-video", "desert-fire"],
                   ["world/ng-interactive/2017/jan/06/radical-brownies-berets-badges-and-social-justice-video", "radical-brownies"],
                   ["world/ng-interactive/2017/feb/10/quipu-the-phone-line-calling-for-justice-in-peru-video", "quipu"],
-                  ["world/ng-interactive/2017/mar/10/internet-warriors", "internet-warriors"]
+                  ["world/ng-interactive/2017/mar/10/the-internet-warriors-in-their-own-home-video", "internet-warriors"]
                 ],
                 'emailListId': 3745
             };
