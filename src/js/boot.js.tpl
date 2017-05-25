@@ -28,11 +28,10 @@ define([], function() {
                   ["world/ng-interactive/2017/mar/10/the-internet-warriors-meet-the-trolls-in-their-own-homes-video", "internet-warriors"],
                   ["technology/ng-interactive/2017/apr/07/meet-erica-the-worlds-most-autonomous-android-video", "erica"],
                   ["world/ng-interactive/2017/apr/13/crossing-boundaries-crabs-asylum-seekers-and-therapy-on-christmas-island-video", "the-island"],
-                  ["world/ng-interactive/2017/apr/10/the-fight", "the-fight"],
                   ["world/ng-interactive/2017/apr/28/the-sprinters-factory-the-tournament-where-girls-compete-to-be-jamaicas-next-top-sprinters", "sprinters-factory"],
                   ["world/ng-interactive/2017/apr/28/the-valley-rebels-the-french-farmer-helping-refugees-cross-europe-video", "valley-rebels"],
                   ["world/ng-interactive/2017/apr/13/crossing-boundaries-crabs-asylum-seekers-and-therapy-on-christmas-island-video", "the-island"],
-                  ["world/ng-interactive/2017/may/05/fighting-for-a-pension-disability-rights-protesters-in-bolivia-face-barricades", "the-fight"]
+                  ["world/ng-interactive/2017/may/05/fighting-for-a-pension-disability-rights-protesters-in-bolivia-face-barricades", "the-fight"],
                   ["world/ng-interactive/2017/may/25/the-infamous-chalk-girl", "the-infamous-chalk-girl"]
                 ],
                 'emailListId': 3745
