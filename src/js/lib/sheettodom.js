@@ -21,6 +21,8 @@ export function sheetToDomInnerHtml(sheetID, sheetName, el, comingSoonSheetName,
                     node.innerHTML = resp.sheets[comingSoonSheetName][0][value.split(`${comingSoonSheetName}-`)[1]];
                 }
                 else {
+                    console.log('sheetName', sheetName);
+                    console.log('data', resp.sheets);
                     node.innerHTML = resp.sheets[sheetName][0][value];
                 }
             }

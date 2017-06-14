@@ -17,23 +17,24 @@ define([], function() {
 
             var interactiveConfig = {
                 'assetPath': '<%= assetPath %>',
-                'comingSoonSheetName': 'coming-soon',
-                'sheetId': '1NcSvccw77rHAncarwfeq7RGZF7yez9mP1Icf3oLMA7g',
-                'docsArray':
-                [
-                  ["world/ng-interactive/2016/sep/16/gun-nation-a-journey-to-the-heart-of-americas-gun-culture-video", "gun-nation"],
-                  ["world/ng-interactive/2016/oct/14/desert-fire-the-world-cup-rebels-of-kurdistan-video", "desert-fire"],
-                  ["world/ng-interactive/2017/jan/06/radical-brownies-berets-badges-and-social-justice-video", "radical-brownies"],
-                  ["world/ng-interactive/2017/feb/10/quipu-the-phone-line-calling-for-justice-in-peru-video", "quipu"],
-                  ["world/ng-interactive/2017/mar/10/the-internet-warriors-meet-the-trolls-in-their-own-homes-video", "internet-warriors"],
-                  ["technology/ng-interactive/2017/apr/07/meet-erica-the-worlds-most-autonomous-android-video", "erica"],
-                  ["sport/ng-interactive/2017/may/12/the-sprinters-factory-the-tournament-where-girls-compete-to-be-jamaicas-next-top-sprinters", "sprinters-factory"],
-                  ["world/ng-interactive/2017/apr/28/the-valley-rebels-the-french-farmer-helping-refugees-cross-europe-video", "valley-rebels"],
-                  ["world/ng-interactive/2017/apr/13/crossing-boundaries-crabs-asylum-seekers-and-therapy-on-christmas-island-video", "the-island"],
-                  ["world/ng-interactive/2017/may/05/fighting-for-a-pension-disability-rights-protesters-in-bolivia-face-barricades", "the-fight"],
-                  ["world/ng-interactive/2017/may/25/the-infamous-chalk-girl", "the-infamous-chalk-girl"]
-                ],
-                'emailListId': 3745
+                // // Brexit Shorts — Manchester Remain voter:
+                'sheetId': '1yTsGNjQ6mHfnDSrdBwD0AXRYw5j-REOl46g051IERGk',
+                // // Brexit Shorts — Mansfield ambiguous voter:
+                // 'sheetId': '1xE2oxEndiixxdUUhyToQB5VCV2yG-Mw5c-WeamHgq6g',
+                // // Brexit Shorts — Abergevenny Leave voter:
+                // 'sheetId': '1claeNsZaOJF7jPLYHLyJIt9yDnV4gOKuLpLe4uz4bXE',
+                // // Brexit Shorts — London Remain voter:
+                // 'sheetId': '100ODEcpoVHmEHkt5Q3SQfOtXuY65us77aeDrgfSatWM',
+                // // Brexit Shorts — Wigan Leave voter:
+                // 'sheetId': '1iMNjUcJAahucLXBfw_ZtTEetNXYZJPg2kDMNBHuLjVM',
+                // // Brexit Shorts — Belfast Remain voter:
+                // 'sheetId': '1K6q_7Omak9bI82NQ_267J8hVxT2CojlYyTUwxx66gBQ',
+                // // Brexit Shorts — Wolverhampton Leave voter:
+                // 'sheetId': '1nAuVXi-suIlGy7V6PGETTZChty27meEyDMv0toTpDbY',
+                // // Brexit Shorts — Glasgow Remain voter:
+                // 'sheetId': '1UGSp7ZnS0ylOtNCuZlIq1iN8rLD2IdFTfJk_9xGWg3I',
+                // // Brexit Shorts — Winchester Leave voter:
+                // 'sheetId': '1NRj-Qaz7ZpqHqegbGOcTFxMPPgw2wSdGa7v11timCPQ'
             };
 
             if (config) {

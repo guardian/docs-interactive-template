@@ -5,7 +5,6 @@ import sheetToDomInnerHtml from './lib/sheettodom';
 import emailsignupURL from './lib/emailsignupURL';
 import { setAttributes, setData, setStyles } from './lib/dom';
 import { isMobile } from './lib/detect';
-import sheetNameFromShortId from './lib/sheetnamefromshortid';
 import reqwest from 'reqwest';
 import DocsSupporter from './lib/docs-supporter';
 
@@ -14,7 +13,7 @@ export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
-    const sheetName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
+    const sheetName = 'film';
     sheetToDomInnerHtml(config.sheetId, sheetName, builder, config.comingSoonSheetName, function callback(resp) {
         const sheetValues = resp.sheets[sheetName][0]; // TODO refactor all instances of `resp.sheets[sheetName][0]` to use this `const`
 
