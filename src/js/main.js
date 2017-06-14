@@ -8,7 +8,6 @@ import { isMobile } from './lib/detect';
 import sheetNameFromShortId from './lib/sheetnamefromshortid';
 import reqwest from 'reqwest';
 import DocsSupporter from './lib/docs-supporter';
-import DocsComingSoon from './lib/docs-coming-soon';
 
 function initChapters(rootEl, chapters, chapterSheetName) {
     chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
@@ -92,11 +91,6 @@ export function init(el, context, config) {
             });
         }
 
-        // show the Bertha coming soon message unless explicitly set to `FALSE` in the sheet
-        if (sheetValues.isBertha !== 'FALSE') {
-            DocsComingSoon.render({node: builder});
-        }
-
         //Show the long description
         showMoreBtn.onclick = function() {
             hiddenDesc.classList.toggle('expanded');
@@ -104,9 +98,6 @@ export function init(el, context, config) {
 
         const emailIframe = builder.querySelector('.js-email-sub__iframe');
 
-        setAttributes(emailIframe, {
-            src: emailsignupURL(config.emailListId)
-        });
 
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
@@ -117,10 +108,6 @@ export function init(el, context, config) {
 
         setStyles(builder.querySelector('.docs__poster--image'), {
             'background-image': `url('${resp.sheets[sheetName][0].backgroundImageUrl}')`
-        });
-
-        setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${resp.sheets[config.comingSoonSheetName][0].image}')`
         });
 
         el.parentNode.replaceChild(builder, el);
