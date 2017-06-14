@@ -9,51 +9,6 @@ import sheetNameFromShortId from './lib/sheetnamefromshortid';
 import reqwest from 'reqwest';
 import DocsSupporter from './lib/docs-supporter';
 
-function initChapters(rootEl, chapters, chapterSheetName) {
-    chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
-
-    chapters.forEach(function(chapter, index) {
-        chapter.start = parseInt(chapter.chapterTimestamp);
-        if (chapters.length > index + 1) {
-            const nextChapter = chapters[index + 1];
-            chapter.end = parseInt(nextChapter.chapterTimestamp);
-        }
-    });
-
-    const compressString = (str) => str.replace(/[\s+|\W]/g, '').toLowerCase();
-
-    const getDataLinkName = (chapterSheetName, title) => `${compressString(chapterSheetName)} | ${title}`;
-
-    const ul = document.createElement('ul');
-    ul.classList.add('docs--chapters');
-
-    chapters.forEach(function(chapter, index) {
-        const dataLinkName = getDataLinkName(chapterSheetName, chapter.chapterTitle);
-        const li = document.createElement('li');
-
-        setAttributes(li, {
-            title: `Skip to chapter ${index+1}: ${chapter.chapterTitle}`
-        });
-
-        setData(li, {
-            start: chapter.start,
-            end: chapter.end,
-            linkName: dataLinkName,
-            role: 'chapter'
-        });
-
-        li.innerText = `${chapter.chapterTitle}`;
-
-        const progress = document.createElement('span');
-        progress.classList.add('progress');
-        li.appendChild(progress);
-
-        ul.appendChild(li);
-    });
-
-    const chaptersWrapper = rootEl.querySelector('.docs--chapters-wrapper');
-    chaptersWrapper.appendChild(ul);
-}
 
 export function init(el, context, config) {
     const builder = document.createElement('div');
@@ -74,9 +29,6 @@ export function init(el, context, config) {
 
 
         const youTubeId = resp.sheets[sheetName][0].youTubeId;
-        const chaptersSheetName = `${sheetName}-chapters`;
-        const chaptersResp = resp.sheets[chaptersSheetName];
-        initChapters(builder, chaptersResp, chaptersSheetName);
 
         const hiddenDesc = builder.querySelector('#intro-expansion');
         const showMoreBtn = builder.querySelector('#intro-expand-btn');
@@ -101,7 +53,7 @@ export function init(el, context, config) {
 
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chaptersResp, config);
+            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
             player.play();
         });
 
@@ -123,7 +75,7 @@ export function init(el, context, config) {
         const shouldAutoPlay = autoplayReferrers.find(ref => ref.test(document.referrer));
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
-            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chaptersResp, config);
+            const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
             player.play();
         });
 
@@ -133,7 +85,7 @@ export function init(el, context, config) {
             builder.querySelector('.docs__poster--title').classList.add('will-autoplay');
             autoplayTimeout = setTimeout(()=> {
                 builder.querySelector('.docs__poster--title').classList.remove('will-autoplay');
-                const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', chaptersResp, config);
+                const player = new PimpedYouTubePlayer(youTubeId, builder, '100%', '100%', config);
                 player.play();
             }, 6000);
         }

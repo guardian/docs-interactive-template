@@ -38,7 +38,7 @@ class PimpedYouTubePlayer {
         self.play(seconds);
     }
 
-    constructor(videoId, node, height, width, chapters, config) {
+    constructor(videoId, node, height, width, config) {
         // declare `self` to avoid scoping issues of `this`
         const self = this;
 
@@ -59,10 +59,6 @@ class PimpedYouTubePlayer {
         });
 
         self.player.on('ready', () => {
-            addChapterEventHandlers();
-
-            self.el.querySelector('#shows-trailer').addEventListener('click', () => self.pause());
-
             self.player.getDuration().then(duration => self.videoDuration = duration);
         });
 
@@ -74,7 +70,6 @@ class PimpedYouTubePlayer {
                 if (event.data === YT.PlayerState.PLAYING) {
                     playTimer = setInterval(function() {
                         self.player.getCurrentTime().then(currentTime => {
-                            trackChapterProgress(currentTime);
                             sendPercentageCompleteEvents(currentTime);
                         });
                     }, 1000);
@@ -84,40 +79,6 @@ class PimpedYouTubePlayer {
             }
         });
 
-        function trackChapterProgress(currentTime) {
-            const currentChapter = chapters.filter(function(value){
-                const chapStart = value.start;
-                const chapEnd = value.end || self.videoDuration;
-                if (currentTime >= chapStart && currentTime < chapEnd){
-                    return value;
-                }
-            });
-            if (currentChapter.length === 1){
-                const chapterElements = self.el.querySelectorAll('.docs--chapters li[data-role="chapter"]');
-
-                Array.from(chapterElements).forEach(function(el){
-                    const dataStart = parseInt(el.dataset.start);
-
-                    if (dataStart === currentChapter[0].start){
-                        el.classList.add('docs--chapters-active');
-                        el.classList.remove('docs--chapters-inactive');
-
-                        const dataEnd = parseInt(el.dataset.end);
-                        const nextChapter = dataEnd || self.videoDuration;
-                        const chapterCurrentProgress = (currentTime - dataStart)/(nextChapter - dataStart);
-
-                        const progress = el.querySelector('.progress');
-
-                        setStyles(progress, {
-                            width: `${chapterCurrentProgress * 100}%`
-                        });
-                    } else {
-                        el.classList.add('docs--chapters-inactive');
-                        el.classList.remove('docs--chapters-active');
-                    }
-                });
-            }
-        }
 
         function sendPercentageCompleteEvents(currentTime) {
             const quartile = self.videoDuration / 4;
@@ -139,16 +100,6 @@ class PimpedYouTubePlayer {
             self.tracker.track('end');
         }
 
-        function addChapterEventHandlers() {
-            const chapterElements = self.el.querySelectorAll('.docs--chapters li[data-role="chapter"]');
-
-            Array.from(chapterElements).forEach( function(chapterBtn) {
-                chapterBtn.onclick = function(){
-                    const chapStart = parseInt(chapterBtn.getAttribute('data-start'));
-                    self.seekTo(chapStart);
-                };
-            });
-        }
     }
 }
 
