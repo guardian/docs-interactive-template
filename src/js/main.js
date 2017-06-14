@@ -63,7 +63,7 @@ export function init(el, context, config) {
     const sheetName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
     sheetToDomInnerHtml(config.sheetId, sheetName, builder, config.comingSoonSheetName, function callback(resp) {
         const sheetValues = resp.sheets[sheetName][0]; // TODO refactor all instances of `resp.sheets[sheetName][0]` to use this `const`
-        
+
         const headline = window.guardian && window.guardian.config && window.guardian.config.page && window.guardian.config.page.headline;
         const shareText = headline || resp.sheets[sheetName][0].title;
         const shareFn = share(shareText, window.location);
@@ -124,20 +124,6 @@ export function init(el, context, config) {
         });
 
         el.parentNode.replaceChild(builder, el);
-
-        const snapLinks = ['One', 'Two', 'Three', 'Four'];
-        snapLinks.forEach((snapLink) => {
-            const jsonURL = resp.sheets[sheetName][0]['jsonSnap' + snapLink];
-            reqwest({
-                'url': jsonURL,
-                'type': 'json',
-                'crossOrigin': true,
-                'success': snapJSON => {
-                    const el = builder.querySelector('section#more-documentaries .nextSnap' + snapLink);
-                    el.innerHTML = snapJSON.html;
-                }
-            });
-        });
 
         const autoplayReferrers = [
             /^https?:\/\/localhost:8000/,
