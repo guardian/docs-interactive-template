@@ -120,14 +120,12 @@
             .supporter-info {
                 position: relative;
                 line-height: 22px;
-                @include icon-info;
-                cursor: pointer;
             }
             .supporter-logo {
                 img {
-                    margin-top: 1px;
-                    width: 108px;
-                    height: 45px;
+                    margin-top: 3px;
+                    width: 107px;
+                    height: 24px;
                 }
             }
             @include mq(leftCol) {

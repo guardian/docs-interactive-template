@@ -26,9 +26,6 @@ class DocsSupporter {
         const infoNode = this.infoNode();
         const infoWrapper = node.querySelector('.docs--about-wrapper');
 
-        const badgePlaceholder = node.querySelector('.meta__supporter');
-        badgePlaceholder.appendChild(badgeNode);
-
         const infoPlaceholder = node.querySelector('.docs--about-body');
         infoPlaceholder.appendChild(infoNode);
 

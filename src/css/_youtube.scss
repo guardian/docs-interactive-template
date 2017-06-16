@@ -137,17 +137,17 @@
         }
     }
     &--logo {
-        width: 164px;
-        height: 92px;
-        margin-top: 4px;
-        @include g-documentaries-logo();
+        width: 205px;
+        height: 123px;
+        margin-top: -4px;
+        @include brexit-shorts-logo();
         position: absolute;
         top: 0;
         z-index: 5;
-        transform-origin: top left;
-        transform: scale(0.8);
-        @include mq(phablet) {
-            transform: scale(1);
+        // transform: scale(0.8);
+        @include mq(tablet) {
+            transform-origin: top left;
+            transform: scale(1.1);
         }
     }
     &--title {
@@ -169,7 +169,7 @@
         line-height: 48px;
         min-width: 50%;
         width: calc(100% - 125px);
-        margin-top: 30px;
+        margin-top: 56px;
         margin-left: -5px;
         color: white;
         z-index: 10;
