@@ -20,8 +20,8 @@
     }
 
     .intro {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
         display: inline-block;
         vertical-align: top;
         padding-bottom: 12px;
@@ -34,7 +34,9 @@
         }
         @include mq(desktop) {
             width: 540px;
-            margin-right: 160px
+            margin-right: 160px;
+            font-size: 20px;
+            line-height: 24px;
         }
         @include mq(leftCol) {
             padding-left: 150px;
