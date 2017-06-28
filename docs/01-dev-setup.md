@@ -12,7 +12,7 @@
 - Ensure you're using Node 6.X (`node --version`), or run `nvm use` to switch
 - Install dependencies `npm install`
 - Start the local server `npm start`
-- Navigate to interactive in a browser `http://localhost:8000/immersive.html`
+- Navigate to interact in a browser `http://localhost:8000/immersive.html`
 
 ## Using third party js
 1. Install package using JSPM e.g.
