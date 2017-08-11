@@ -36,7 +36,7 @@ define([], function() {
                   ["global/ng-interactive/2017/jun/28/pitching-up-documentary", "pitching-up"],
                   ["us-news/ng-interactive/2017/aug/04/dearborn-michigan-divided-muslim-american-donald-trump-documentary", "dearborn-michigan"],
                   ["world/ng-interactive/2017/aug/10/second-innings-from-afghanistan-to-london-building-a-new-life-playing-cricket", "second-innings"],
-                  ["aug/10/second-innings-from-afghanistan-to-london-building-a-new-life-playing-cricket", "asdasd"]
+                  ["aug/10/second-innings-from-afghanistan-to-london-building-a-new-life-playing-cricket", "gun-nation"]
                 ],
                 'emailListId': 3745
             };
