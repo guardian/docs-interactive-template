@@ -22,25 +22,16 @@ define([], function() {
                 'docsArray':
                 [
                   ["world/ng-interactive/2016/sep/16/gun-nation-a-journey-to-the-heart-of-americas-gun-culture-video", "gun-nation"],
-                  ["world/ng-interactive/2016/oct/14/desert-fire-the-world-cup-rebels-of-kurdistan-video", "desert-fire"],
-                  ["world/ng-interactive/2017/jan/06/radical-brownies-berets-badges-and-social-justice-video", "radical-brownies"],
-                  ["world/ng-interactive/2017/feb/10/quipu-the-phone-line-calling-for-justice-in-peru-video", "quipu"],
-                  ["world/ng-interactive/2017/mar/10/the-internet-warriors-meet-the-trolls-in-their-own-homes-video", "gun-nation"],
-                  ["technology/ng-interactive/2017/apr/07/meet-erica-the-worlds-most-autonomous-android-video", "erica-man-made"],
-                  ["sport/ng-interactive/2017/may/12/the-sprinters-factory-the-tournament-where-girls-compete-to-be-jamaicas-next-top-sprinters", "the-sprinter-factory"],
-                  ["world/ng-interactive/2017/apr/28/the-valley-rebels-the-french-farmer-helping-refugees-cross-europe-video", "the-valley-rebels"],
-                  ["world/ng-interactive/2017/apr/13/crossing-boundaries-crabs-asylum-seekers-and-therapy-on-christmas-island-video", "the-island"],
-                  ["world/ng-interactive/2017/may/05/fighting-for-a-pension-disability-rights-protesters-in-bolivia-face-barricades", "the-fight"],
-                  ["world/ng-interactive/2017/jun/16/chalk-girl-hong-kong-democracy-umbrella-movement-protester-china", "the-infamous-chalk-girl"],
-                  ["film/ng-interactive/2017/jun/30/fish-story-anglesey-video-fish-surnames", "fish-story"],
-                  ["world/ng-interactive/2017/jul/14/pitching-up-ancient-sports-for-children-in-irelands-most-ethnically-diverse-town", "pitching-up"],
-                  ["us-news/ng-interactive/2017/aug/04/dearborn-michigan-divided-muslim-american-donald-trump-documentary", "dearborn-michigan"],
-                  ["world/ng-interactive/2017/sep/07/second-innings-how-cricket-is-helping-three-afghan-boys-build-a-new-life-in-london", "second-innings"],
-                  ["world/ng-interactive/2017/sep/22/qandeel-baloch-the-life-death-and-impact-of-pakistans-working-class-icon", "qandeel"],
-                  ["world/ng-interactive/2017/oct/06/home-match-a-young-ukrainian-woman-torn-between-football-and-family", "home-match"],
-                  ["world/ng-interactive/2017/oct/27/muxes-documentary-the-mexican-town-where-gender-is-fluid", "muxes"],
-                  ["world/ng-interactive/2017/nov/24/on-the-road-living-and-working-on-the-italian-road-of-love", "on-the-road"],
-                  ["global/ng-interactive/2017/dec/01/killing-gavle", "killing-gävle"],
+                  ["world/ng-interactive/2017/mar/10/the-internet-warriors-meet-the-trolls-in-their-own-homes-video", "the-internet-warriors"],
+                  ["global/ng-interactive/2018/jan/04/episode-one", "made-in-stoke-episode-1"],
+                  ["global/ng-interactive/2018/jan/04/episode-tw", "made-in-stoke-episode-2"],
+                  ["global/ng-interactive/2018/jan/04/episode-three", "made-in-stoke-episode-3"],
+                  ["global/ng-interactive/2018/jan/04/episode-four", "made-in-stoke-episode-4"],
+                  ["global/ng-interactive/2018/jan/04/episode-five", "made-in-stoke-episode-5"],
+                  ["global/ng-interactive/2018/jan/04/episode-six", "made-in-stoke-episode-6"],
+                  ["global/ng-interactive/2018/jan/04/episode-seven", "made-in-stoke-episode-7"],
+                  ["global/ng-interactive/2018/jan/04/episode-eight", "made-in-stoke-episode-8"]
+
                 ],
                 'emailListId': 3745
             };
