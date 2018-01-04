@@ -103,11 +103,11 @@ export function init(el, context, config) {
             hiddenDesc.classList.toggle('expanded');
         };
 
-        const emailIframe = builder.querySelector('.js-email-sub__iframe');
-
-        setAttributes(emailIframe, {
-            src: emailsignupURL(config.emailListId)
-        });
+        // const emailIframe = builder.querySelector('.js-email-sub__iframe');
+        //
+        // setAttributes(emailIframe, {
+        //     src: emailsignupURL(config.emailListId)
+        // });
 
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function() {
@@ -120,9 +120,9 @@ export function init(el, context, config) {
             'background-image': `url('${docData.backgroundImageUrl}')`
         });
 
-        setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${docData.comingNext.image}')`
-        });
+        // setStyles(builder.querySelector('.coming-soon-background'), {
+        //     'background-image': `url('${docData.comingNext.image}')`
+        // });
 
         el.parentNode.replaceChild(builder, el);
 

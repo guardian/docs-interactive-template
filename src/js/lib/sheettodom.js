@@ -5,7 +5,7 @@ export function sheetToDomInnerHtml({el, docData, comingSoonSheetName}) {
         const field = node.getAttribute('data-sheet-attribute');
 
         if(startsWith(field, `${comingSoonSheetName}-`)){
-            node.innerHTML = docData.comingNext[field.split(`${comingSoonSheetName}-`)[1]];
+            //node.innerHTML = docData.comingNext[field.split(`${comingSoonSheetName}-`)[1]];
         }
         else {
             node.innerHTML = docData.getField(field);
