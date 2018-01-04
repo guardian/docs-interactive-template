@@ -58,7 +58,6 @@ function initChapters(rootEl, docName, chapters) {
 export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
-
     const docName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
 
     const docMetadata = new DocumentaryMetadata({
@@ -83,7 +82,7 @@ export function init(el, context, config) {
             shareEl.addEventListener('click', () => shareFn(network));
         });
 
-        initChapters(builder, docName, docData.chapters);
+      //  initChapters(builder, docName, docData.chapters);
 
         const hiddenDesc = builder.querySelector('#intro-expansion');
         const showMoreBtn = builder.querySelector('#intro-expand-btn');
