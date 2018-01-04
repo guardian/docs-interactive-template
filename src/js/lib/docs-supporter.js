@@ -30,7 +30,7 @@ class DocsSupporter {
 
     badgeNode() {
         const htmlString = `
-            <div class='supporter-info' id='show-about-these-films'>Supported by</div>
+            <div class='supporter-info' id='show-about-these-films'>Cities is supported by</div>
             <a class='supporter-logo' href="${this.docData.supportedSiteUrl}" target="_blank">
                 <img src='${this.docData.supportedBadgeUrl}'>
             </a>
