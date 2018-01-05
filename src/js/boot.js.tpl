@@ -47,8 +47,6 @@ define([], function() {
                   ["global/ng-interactive/2018/jan/08/episode-six", "made-in-stoke-episode-6"],
                   ["global/ng-interactive/2018/jan/08/episode-seven", "made-in-stoke-episode-7"],
                   ["global/ng-interactive/2018/jan/08/episode-eight", "made-in-stoke-episode-8"],
-
-
                 ],
                 'emailListId': 3745
             };
