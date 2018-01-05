@@ -10,7 +10,15 @@ export function sheetToDomInnerHtml({el, docData, comingSoonSheetName}) {
         else {
             node.innerHTML = docData.getField(field);
         }
+
+
     });
+
+    // const ar = docData._docName.split("-");
+    // const len = ar.length - 1;
+
+	//console.log("Made in Stoke-on-Trent: Episode "+docData._docData.episodeNumber );
+
 }
 
 export default sheetToDomInnerHtml;

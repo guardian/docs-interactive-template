@@ -139,10 +139,12 @@ export function init(el, context, config) {
             const el = builder.querySelector(`.ep-${i}`);
             el.innerHTML = `<a href='https://theguardian.com/${docInfo[0]}'><div class="doc-card">
                               <img class='doc-card__poster' src='${ doc.onwardJourneyImageUrl }'>
+                              <div  class='doc-card__overlay_title'>${i}</div>
                               <div class='doc-card__meta'>
-                                  <p class='doc-card__description'>${ doc.title }</p>
+                                  <p class='doc-card__description'>${ doc.episodeTitleString }</p>
                               </div>
                             </div></a>`
+
         });
 
         const autoplayReferrers = [
@@ -177,7 +179,18 @@ export function init(el, context, config) {
             builder.querySelector('.docs__poster--title').classList.remove('will-autoplay');
             builder.querySelector('.docs__poster--title').classList.add('cancelled-autoplay');
         });
+
+        builder.querySelector('.docs__poster--stoke_sub_title').innerHTML = "Made in Stoke-on-Trent: Episode "+docData._docData.episodeNumber; //+ docData._docData.episodeNumber
+
+        builder.querySelector('.docs__poster--headline').innerHTML = docData._docData.episodeTitleString;
+
+        console.log(docData)
     });
+
+    
+    
+
+
 
     window.addEventListener('scroll', ()=> {
         const s = window.scrollY;

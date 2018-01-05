@@ -315,6 +315,18 @@ $mq-breakpoints: (
         padding-bottom: 6px;
         margin: 0;
     }
+    &__overlay_title{
+        position:absolute; 
+        top:20px ;
+        left: 0px;
+        margin-left:12px;
+        font-size: 48px;
+        font-weight: 200;
+        text-shadow: -1px -1px 0 rgba(0,0,0, 0.25), 1px -1px 0 rgba(0,0,0, 0.25), -1px 1px 0 rgba(0,0,0, 0.25), 1px 1px 0 rgba(0,0,0, 0.25);
+        color:#EFEFEF;
+    }
+    
+
     & &__link {
         text-indent: -9em;
         display: block;
