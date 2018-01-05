@@ -195,6 +195,21 @@
             width: auto;
         }
     }
+
+    &--stoke_sub_title {
+        position:absolute;
+        top:12px;
+        left:100px;
+        margin-bottom:20px;
+        font-family: "Guardian Text Sans Web", "Helvetica", Helvetica, Arial, sans-serif !important;
+        font-weight: 200;
+        font-size:14px;
+        color: #FFF !important;
+        @include mq(tablet) {
+            top:36px;
+            left:114px;
+        }
+    }
     &--play-button {
         margin-top: 27px;
         display: inline-block;
