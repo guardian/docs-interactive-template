@@ -317,13 +317,18 @@ $mq-breakpoints: (
     }
     &__overlay_title{
         position:absolute; 
-        top:20px ;
-        left: 0px;
-        margin-left:12px;
-        font-size: 48px;
-        font-weight: 200;
-        text-shadow: -1px -1px 0 rgba(0,0,0, 0.25), 1px -1px 0 rgba(0,0,0, 0.25), -1px 1px 0 rgba(0,0,0, 0.25), 1px 1px 0 rgba(0,0,0, 0.25);
-        color:#EFEFEF;
+        top:6px ;
+        left: 6px;
+        font-size: 22px;
+        font-weight: 600;
+        text-align:center;
+        width:36px;
+        height:27px;
+        padding-top:9px;
+        border-radius: 100px;
+        // text-shadow: -1px -1px 0 rgba(0,0,0, 0.25), 1px -1px 0 rgba(0,0,0, 0.25), -1px 1px 0 rgba(0,0,0, 0.25), 1px 1px 0 rgba(0,0,0, 0.25);
+        color:#333;
+        background-color: #FFcc00;
     }
     
 
