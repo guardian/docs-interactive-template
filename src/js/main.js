@@ -126,16 +126,19 @@ export function init(el, context, config) {
 
         el.parentNode.replaceChild(builder, el);
 
-        docData.onwardJourneyLinks.forEach(snapLink => {
-            reqwest({
-                'url': snapLink.jsonUrl,
-                'type': 'json',
-                'crossOrigin': true,
-                'success': snapJSON => {
-                    const el = builder.querySelector(`section#more-documentaries .nextSnap${snapLink.position}`);
-                    el.innerHTML = snapJSON.html;
-                }
-            });
+        docData._docData.fullseries.forEach(function (doc, i) {
+          console.log(doc.docName)
+          if(doc.docName == 'the-internet-warriors'){
+            return;
+          }
+          console.log(i)
+            const el = builder.querySelector(`.ep-${i}`);
+            el.innerHTML = `<div class="doc-card">
+                              <img class='doc-card__poster' src='${ doc.onwardJourneyImageUrl }'>
+                              <div class='doc-card__meta'>
+                                  <p class='doc-card__description'>${ doc.title }</p>
+                              </div>
+                            </div>`
         });
 
         const autoplayReferrers = [
