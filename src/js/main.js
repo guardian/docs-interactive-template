@@ -60,6 +60,7 @@ export function init(el, context, config) {
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
     const docName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
 
+
     const docMetadata = new DocumentaryMetadata({
         sheetId: config.sheetId,
         docName: docName,
@@ -127,18 +128,21 @@ export function init(el, context, config) {
         el.parentNode.replaceChild(builder, el);
 
         docData._docData.fullseries.forEach(function (doc, i) {
-          console.log(doc.docName)
-          if(doc.docName == 'the-internet-warriors'){
-            return;
-          }
-          console.log(i)
+                  console.log(doc.docName)
+                  if(doc.docName == 'the-internet-warriors'){
+                    return;
+                  }
+                var docInfo = config.docsArray.find(function(d){
+                  return d[1] == doc.docName
+                })
+
             const el = builder.querySelector(`.ep-${i}`);
-            el.innerHTML = `<div class="doc-card">
+            el.innerHTML = `<a href='https://theguardian.com/${docInfo[0]}'><div class="doc-card">
                               <img class='doc-card__poster' src='${ doc.onwardJourneyImageUrl }'>
                               <div class='doc-card__meta'>
                                   <p class='doc-card__description'>${ doc.title }</p>
                               </div>
-                            </div>`
+                            </div></a>`
         });
 
         const autoplayReferrers = [

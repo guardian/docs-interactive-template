@@ -4,11 +4,7 @@ import reqwest from 'reqwest';
 const DEFAULT_SUPPORTED_DATA = {
     supportedBadgeUrl: 'https://uploads.guim.co.uk/2017/01/11/bertha-foundation-logo-grey.png',
     supportedSiteUrl: 'http://www.berthafoundation.org/',
-<<<<<<< HEAD
     supportedInfo: ``
-=======
-    supportedInfo: `Not needed`
->>>>>>> ff4e3edcc15cc0d75ae436ad73c0246fc6ff4413
 };
 
 class DocumentaryMetadata {
