@@ -30,7 +30,24 @@ define([], function() {
                   ["global/ng-interactive/2018/jan/04/episode-five", "made-in-stoke-episode-5"],
                   ["global/ng-interactive/2018/jan/04/episode-six", "made-in-stoke-episode-6"],
                   ["global/ng-interactive/2018/jan/04/episode-seven", "made-in-stoke-episode-7"],
-                  ["global/ng-interactive/2018/jan/04/episode-eight", "made-in-stoke-episode-8"]
+                  ["global/ng-interactive/2018/jan/04/episode-eight", "made-in-stoke-episode-8"],
+                  ["global/ng-interactive/2018/jan/05/episode-one", "made-in-stoke-episode-1"],
+                  ["global/ng-interactive/2018/jan/05/episode-tw", "made-in-stoke-episode-2"],
+                  ["global/ng-interactive/2018/jan/05/episode-three", "made-in-stoke-episode-3"],
+                  ["global/ng-interactive/2018/jan/05/episode-four", "made-in-stoke-episode-4"],
+                  ["global/ng-interactive/2018/jan/05/episode-five", "made-in-stoke-episode-5"],
+                  ["global/ng-interactive/2018/jan/05/episode-six", "made-in-stoke-episode-6"],
+                  ["global/ng-interactive/2018/jan/05/episode-seven", "made-in-stoke-episode-7"],
+                  ["global/ng-interactive/2018/jan/05/episode-eight", "made-in-stoke-episode-8"],
+                  ["global/ng-interactive/2018/jan/08/episode-one", "made-in-stoke-episode-1"],
+                  ["global/ng-interactive/2018/jan/08/episode-tw", "made-in-stoke-episode-2"],
+                  ["global/ng-interactive/2018/jan/08/episode-three", "made-in-stoke-episode-3"],
+                  ["global/ng-interactive/2018/jan/08/episode-four", "made-in-stoke-episode-4"],
+                  ["global/ng-interactive/2018/jan/08/episode-five", "made-in-stoke-episode-5"],
+                  ["global/ng-interactive/2018/jan/08/episode-six", "made-in-stoke-episode-6"],
+                  ["global/ng-interactive/2018/jan/08/episode-seven", "made-in-stoke-episode-7"],
+                  ["global/ng-interactive/2018/jan/08/episode-eight", "made-in-stoke-episode-8"],
+
 
                 ],
                 'emailListId': 3745
