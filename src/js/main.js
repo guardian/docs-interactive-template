@@ -184,11 +184,11 @@ export function init(el, context, config) {
 
         builder.querySelector('.docs__poster--headline').innerHTML = docData._docData.episodeTitleString;
 
-        console.log(docData)
+        //console.log(docData)
     });
 
-    
-    
+
+
 
 
 
