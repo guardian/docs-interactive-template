@@ -23,7 +23,7 @@ define([], function() {
                 [
                   ["world/ng-interactive/2016/sep/16/gun-nation-a-journey-to-the-heart-of-americas-gun-culture-video", "gun-nation"],
                   ["world/ng-interactive/2017/mar/10/the-internet-warriors-meet-the-trolls-in-their-own-homes-video", "the-internet-warriors"],
-                  ["uk-news/ng-interactive/2018/jan/08/made-in-stoke-on-trent-episode-1-the-plate-turners-club", "made-in-stoke-episode-1"],
+                  ["uk-news/ng-interactive/2018/jan/08/made-in-stoke-on-trent-episode-1-we-have-lift-off", "made-in-stoke-episode-1"],
                   ["uk-news/ng-interactive/2018/jan/08/made-in-stoke-on-trent-episode-2-1-for-a-house", "made-in-stoke-episode-2"],
                   ["uk-news/ng-interactive/2018/jan/08/made-in-stoke-on-trent-episode-3-prevail", "made-in-stoke-episode-3"],
                   ["uk-news/ng-interactive/2018/jan/08/made-in-stoke-on-trent-episode-4-a-potted-history", "made-in-stoke-episode-4"],
