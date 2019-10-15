@@ -1,23 +1,27 @@
 /*globals YT*/
 import YouTubePlayer from 'youtube-player';
 import reqwest from 'reqwest';
-import {isMobile} from './detect';
+import { isMobile } from './detect';
 import Tracker from './tracking';
-import {setStyles, scrollTo} from './dom';
-import {parse} from 'iso8601-duration';
+import { setStyles, scrollTo } from './dom';
+import { parse } from 'iso8601-duration';
 
 class PimpedYouTubePlayer {
-    play (seconds) {
+    play(seconds) {
         const self = this;
 
         self.tracker.track('play');
 
-        if (! isMobile()) {
-            self.el.querySelector('.docs__poster--wrapper').classList.add('docs__poster--wrapper--playing');
+        if (!isMobile()) {
+            self.el
+                .querySelector('.docs__poster--wrapper')
+                .classList.add('docs__poster--wrapper--playing');
         }
 
         scrollTo(document.body, 0, 300);
-        self.el.querySelector('.docs__poster--loader').classList.add('docs__poster--hide');
+        self.el
+            .querySelector('.docs__poster--loader')
+            .classList.add('docs__poster--hide');
 
         if (seconds !== undefined) {
             self.player.seekTo(seconds, true);
@@ -26,16 +30,43 @@ class PimpedYouTubePlayer {
         self.player.playVideo();
     }
 
-    pause () {
+    pause() {
         const self = this;
 
         self.player.pauseVideo();
     }
 
-    seekTo (seconds) {
+    seekTo(seconds) {
         const self = this;
 
         self.play(seconds);
+    }
+
+    generateCustomParams(config) {
+        return {
+            sens: config.page.isSensitive ? 't' : 'f',
+            // x: getKruxSegments(adConsentState),
+            pv: config.ophan.pageViewId,
+            // bp: findBreakpoint(),
+            // at: getCookie('adtest') || undefined,
+            // si: isUserLoggedIn() ? 't' : 'f',
+            // gdncrm: getUserSegments(adConsentState),
+            // ab: abParam(),
+            // ref: getReferrer(),
+            // ms: formatTarget(page.source),
+            // fr: getVisitedValue(),
+            // round video duration up to nearest 30 multiple
+            vl: config.page.videoDuration
+                ? (Math.ceil(page.videoDuration / 30.0) * 30).toString()
+                : undefined,
+            // cc: geolocationGetSync(),
+            s: config.page.section, // for reference in a macro, so cannot be extracted from ad unit
+            //rp: config.get('isDotcomRendering', false)
+            //    ? 'dotcom-rendering'
+            //   : 'dotcom-platform', // rendering platform
+            //inskin: inskinTargetting(),
+            ...config.page.sharedAdTargeting
+        };
     }
 
     constructor(videoId, node, height, width, chapters, config) {
@@ -50,20 +81,36 @@ class PimpedYouTubePlayer {
         });
 
         const playerEl = self.el.querySelector('#ytGuPlayer');
+        const customParams = self.generateCustomParams(config);
+        const embedConfig = {
+            adsConfig: {
+                adTagParameters: {
+                    iu: config.page.adUnit,
+                    cust_params: customParams
+                }
+            }
+        };
+
+        console.log(embedConfig);
 
         self.player = new YouTubePlayer(playerEl, {
             height: height,
             width: width,
             videoId: videoId,
-            playerVars: { 'autoplay': 0, 'controls': 1, 'rel': 0 }
+            playerVars: { autoplay: 0, controls: 1, rel: 0 },
+            embedConfig: embedConfig
         });
 
         self.player.on('ready', () => {
             addChapterEventHandlers();
 
-            self.el.querySelector('#shows-trailer').addEventListener('click', () => self.pause());
+            self.el
+                .querySelector('#shows-trailer')
+                .addEventListener('click', () => self.pause());
 
-            self.player.getDuration().then(duration => self.videoDuration = duration);
+            self.player
+                .getDuration()
+                .then(duration => (self.videoDuration = duration));
         });
 
         self.player.on('stateChange', event => {
@@ -85,26 +132,30 @@ class PimpedYouTubePlayer {
         });
 
         function trackChapterProgress(currentTime) {
-            const currentChapter = chapters.filter(function(value){
+            const currentChapter = chapters.filter(function(value) {
                 const chapStart = value.start;
                 const chapEnd = value.end || self.videoDuration;
-                if (currentTime >= chapStart && currentTime < chapEnd){
+                if (currentTime >= chapStart && currentTime < chapEnd) {
                     return value;
                 }
             });
-            if (currentChapter.length === 1){
-                const chapterElements = self.el.querySelectorAll('.docs--chapters li[data-role="chapter"]');
+            if (currentChapter.length === 1) {
+                const chapterElements = self.el.querySelectorAll(
+                    '.docs--chapters li[data-role="chapter"]'
+                );
 
-                Array.from(chapterElements).forEach(function(el){
+                Array.from(chapterElements).forEach(function(el) {
                     const dataStart = parseInt(el.dataset.start);
 
-                    if (dataStart === currentChapter[0].start){
+                    if (dataStart === currentChapter[0].start) {
                         el.classList.add('docs--chapters-active');
                         el.classList.remove('docs--chapters-inactive');
 
                         const dataEnd = parseInt(el.dataset.end);
                         const nextChapter = dataEnd || self.videoDuration;
-                        const chapterCurrentProgress = (currentTime - dataStart)/(nextChapter - dataStart);
+                        const chapterCurrentProgress =
+                            (currentTime - dataStart) /
+                            (nextChapter - dataStart);
 
                         const progress = el.querySelector('.progress');
 
@@ -140,11 +191,15 @@ class PimpedYouTubePlayer {
         }
 
         function addChapterEventHandlers() {
-            const chapterElements = self.el.querySelectorAll('.docs--chapters li[data-role="chapter"]');
+            const chapterElements = self.el.querySelectorAll(
+                '.docs--chapters li[data-role="chapter"]'
+            );
 
-            Array.from(chapterElements).forEach( function(chapterBtn) {
-                chapterBtn.onclick = function(){
-                    const chapStart = parseInt(chapterBtn.getAttribute('data-start'));
+            Array.from(chapterElements).forEach(function(chapterBtn) {
+                chapterBtn.onclick = function() {
+                    const chapStart = parseInt(
+                        chapterBtn.getAttribute('data-start')
+                    );
                     self.seekTo(chapStart);
                 };
             });
@@ -152,22 +207,28 @@ class PimpedYouTubePlayer {
     }
 }
 
-function getYouTubeVideoDuration(videoId, callback){
+function getYouTubeVideoDuration(videoId, callback) {
     //Note: This is a browser key intended to be exposed on the client-side.
     const apiKey = 'AIzaSyCtM2CJsgRhfXVj_HesBIs540tzD4JUXqc';
 
     reqwest({
-        url: 'https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=' + videoId + '&key=' + apiKey,
+        url:
+            'https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=' +
+            videoId +
+            '&key=' +
+            apiKey,
         type: 'json',
         crossOrigin: true,
-        success: (resp) => {
+        success: resp => {
             //duration is an ISO8601 duration
             //see: https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
-            const duration =  resp.items[0].contentDetails.duration;
+            const duration = resp.items[0].contentDetails.duration;
 
             const parsedDuration = parse(duration);
 
-            const paddedSeconds = `${parsedDuration.seconds < 10 ? '0' : ''}${parsedDuration.seconds}`;
+            const paddedSeconds = `${parsedDuration.seconds < 10 ? '0' : ''}${
+                parsedDuration.seconds
+            }`;
 
             //assumes video duration is less than an hour
             const formattedDuration = `${parsedDuration.minutes}:${paddedSeconds}`;
