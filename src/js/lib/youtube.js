@@ -5,6 +5,7 @@ import { isMobile } from './detect';
 import Tracker from './tracking';
 import { setStyles, scrollTo } from './dom';
 import { parse } from 'iso8601-duration';
+import { constructQuery } from './querystring';
 
 class PimpedYouTubePlayer {
     play(seconds) {
@@ -43,30 +44,17 @@ class PimpedYouTubePlayer {
     }
 
     generateCustomParams(config) {
-        return {
+        const customParams = {
             sens: config.page.isSensitive ? 't' : 'f',
-            // x: getKruxSegments(adConsentState),
             pv: config.ophan.pageViewId,
-            // bp: findBreakpoint(),
-            // at: getCookie('adtest') || undefined,
-            // si: isUserLoggedIn() ? 't' : 'f',
-            // gdncrm: getUserSegments(adConsentState),
-            // ab: abParam(),
-            // ref: getReferrer(),
-            // ms: formatTarget(page.source),
-            // fr: getVisitedValue(),
-            // round video duration up to nearest 30 multiple
             vl: config.page.videoDuration
                 ? (Math.ceil(page.videoDuration / 30.0) * 30).toString()
                 : undefined,
-            // cc: geolocationGetSync(),
-            s: config.page.section, // for reference in a macro, so cannot be extracted from ad unit
-            //rp: config.get('isDotcomRendering', false)
-            //    ? 'dotcom-rendering'
-            //   : 'dotcom-platform', // rendering platform
-            //inskin: inskinTargetting(),
-            ...config.page.sharedAdTargeting
+            s: config.page.section,
+            ...config.page.sharedAdTargeting,
+            ...config.page.pageAdTargeting
         };
+        return encodeURIComponent(constructQuery(customParams));
     }
 
     constructor(videoId, node, height, width, chapters, config) {
@@ -87,11 +75,10 @@ class PimpedYouTubePlayer {
                 adTagParameters: {
                     iu: config.page.adUnit,
                     cust_params: customParams
-                }
+                },
+                nonPersonalizzedAd: false
             }
         };
-
-        console.log(embedConfig);
 
         self.player = new YouTubePlayer(playerEl, {
             height: height,
