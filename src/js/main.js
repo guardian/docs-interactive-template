@@ -60,9 +60,11 @@ export function init(el, context, config) {
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
     const docName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
+    const docShortUrl = window.guardian.config.page.pageId;
 
     const docMetadata = new DocumentaryMetadata({
         sheetId: config.sheetId,
+        docShortUrl: docShortUrl,
         docName: docName,
         comingSoonSheetName: config.comingSoonSheetName
     });

@@ -16,8 +16,9 @@ const DEFAULT_SUPPORTED_DATA = {
 };
 
 class DocumentaryMetadata {
-    constructor({ sheetId, docName, comingSoonSheetName }) {
+    constructor({ sheetId, docShortUrl, docName, comingSoonSheetName }) {
         this._sheetId = sheetId;
+        this._docShortUrl = docShortUrl;
         this._docName = docName;
         this._comingSoonSheetName = comingSoonSheetName;
     }
@@ -31,7 +32,10 @@ class DocumentaryMetadata {
                 type: 'json',
                 crossOrigin: true,
                 success: resp => {
-                    const metadata = resp.sheets.documentaries.find(_ => _.docName === this._docName);
+
+                    const docShortName = this.findDocShortName(resp.sheets.documentaries, this._docShortUrl);
+
+                    const metadata = resp.sheets.documentaries.find(_ => _.docName === docShortName);
 
                     if (!metadata && window.console) {
                         // eslint-disable-next-line no-console
@@ -72,6 +76,13 @@ class DocumentaryMetadata {
                 error: err => reject(err)
             });
         });
+    }
+
+    findDocShortName(docs, shortUrl) {
+        const doc = docs[docs.findIndex((doc) => {
+            return (doc.fullLink.indexOf(shortUrl) >= 0)
+        })];
+        return (doc ? doc.docName : docs[docs.length - 1].docName)
     }
 
     getField(field) {
