@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'teranga';
+const DEFAULT_DOC = 'scars';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
