@@ -285,4 +285,11 @@
             right: 1px;
         }
     }
+
+    // the blank class is added when there is no data
+    // in the sheet for this section
+    &.blank {
+        display: none;
+    }
+
 }

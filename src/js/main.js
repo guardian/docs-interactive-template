@@ -121,9 +121,14 @@ export function init(el, context, config) {
             'background-image': `url('${docData.backgroundImageUrl}')`
         });
 
-        setStyles(builder.querySelector('.coming-soon-background'), {
-            'background-image': `url('${docData.comingNext.image}')`
-        });
+
+        if (docData.comingNext) {
+            setStyles(builder.querySelector('.coming-soon-background'), {
+                'background-image': `url('${docData.comingNext.image}')`
+            });
+        } else {
+            builder.querySelector('.coming-soon').classList.add('blank');
+        }
 
         el.parentNode.replaceChild(builder, el);
 
