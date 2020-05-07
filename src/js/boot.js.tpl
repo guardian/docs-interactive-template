@@ -77,7 +77,8 @@ define([], function () {
             ['world/ng-interactive/2019/nov/18/nowt-but-a-fleeting-thing-a-young-farmers-fight-for-survival-video', 'nowt-but-a-fleeting-thing'],
             ['news/ng-interactive/2019/dec/02/open-water-lives-of-three-greenlanders-climate-crisis', 'open-water'],
             ['news/ng-interactive/2020/jan/17/a-childhood-on-fire-documentary-video', 'a-childhood-on-fire'],
-            ['news/ng-interactive/2020/feb/07/teranga-the-migrant-run-afrobeat-nightclub-uniting-naples-video', 'teranga']
+            ['news/ng-interactive/2020/feb/07/teranga-the-migrant-run-afrobeat-nightclub-uniting-naples-video', 'teranga'],
+            ['news/ng-interactive/2020/apr/27/scars-how-our-wounds-make-us-who-we-are-video', 'scars']
           ],
         'emailListId': 3745
       };
