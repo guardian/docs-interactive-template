@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'scars';
+const DEFAULT_DOC = 'quarantine-irianian-style';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
