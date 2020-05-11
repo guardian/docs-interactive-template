@@ -80,7 +80,8 @@ define([], function () {
             ['news/ng-interactive/2019/dec/02/open-water-lives-of-three-greenlanders-climate-crisis', 'open-water'],
             ['news/ng-interactive/2020/jan/17/a-childhood-on-fire-documentary-video', 'a-childhood-on-fire'],
             ['news/ng-interactive/2020/feb/07/teranga-the-migrant-run-afrobeat-nightclub-uniting-naples-video', 'teranga'],
-            ['news/ng-interactive/2020/apr/27/scars-how-our-wounds-make-us-who-we-are-video', 'scars']
+            ['news/ng-interactive/2020/apr/27/scars-how-our-wounds-make-us-who-we-are-video', 'scars'],
+            ['/world/ng-interactive/2020/may/12/quarantine-iranian-style-how-coronavirus-changed-one-couples-life', 'quarantine-iranian-style']
           ],
         'emailListId': 3745
       };
