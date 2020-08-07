@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'quarantine-iranian-style';
+const DEFAULT_DOC = 'united-voices';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
