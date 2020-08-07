@@ -95,9 +95,6 @@
             right: 20px;
             background-color: #ffe500;
             border-radius: 100%;
-            @include mq(wide) {
-                right: 90px;
-            }
         }
     }
 
