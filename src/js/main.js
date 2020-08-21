@@ -66,7 +66,7 @@ function initLiveEvent() {
 }
 
 function fillInLiveEl(rootEl) {
-    const jsonLink = 'https://interactive.guim.co.uk/docsdata-test/153VTERPwmEkz1laUKKyrvGL_0sk9NgPfNnKa-D6NQo0.json';
+    const jsonLink = 'https://interactive.guim.co.uk/docsdata-test/1wYby3cMc_YhdP8kbPWEVa5jhJ22bX_xnIv6rhqt3czA.json';
 
     loadJSON(jsonLink, function (rawData) {
         const data = rawData.sheets['Sheet1'][0];
