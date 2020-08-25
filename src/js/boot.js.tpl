@@ -12,7 +12,7 @@ define([], function () {
   return {
     boot: function (el, context, config, mediator) {
 
-        console.log('1129');
+        console.log('1237');
 
       // Loading message while we fetch JS / CSS
       el.innerHTML = '<div style="font-size: 24px; text-align: center; padding: 72px 0; font-family: \'Guardian Egyptian Web\',Georgia,serif;">Loading…</div>';
@@ -81,10 +81,10 @@ define([], function () {
             ['news/ng-interactive/2020/jan/17/a-childhood-on-fire-documentary-video', 'a-childhood-on-fire'],
             ['news/ng-interactive/2020/feb/07/teranga-the-migrant-run-afrobeat-nightclub-uniting-naples-video', 'teranga'],
             ['news/ng-interactive/2020/apr/27/scars-how-our-wounds-make-us-who-we-are-video', 'scars'],
-            ['/world/ng-interactive/2020/may/12/our-iranian-lockdown-how-coronavirus-changed-one-couples-life', 'quarantine-iranian-style'],
-            ['/world/ng-interactive/2020/jul/15/the-circle-masculinity-racism-and-brotherhood-on-a-hackney-estate-video', 'the-circle'],
-            ['/politics/ng-interactive/2020/aug/12/united-voices-outsourced-key-workers-fighting-for-equal-rights-video', 'united-voices'],
-            ['/education/ng-interactive/2020/sep/02/somalinimo-black-female-and-muslim-at-cambridge-univeristy', 'somalinimo']
+            ['world/ng-interactive/2020/may/12/our-iranian-lockdown-how-coronavirus-changed-one-couples-life', 'quarantine-iranian-style'],
+            ['world/ng-interactive/2020/jul/15/the-circle-masculinity-racism-and-brotherhood-on-a-hackney-estate-video', 'the-circle'],
+            ['politics/ng-interactive/2020/aug/12/united-voices-outsourced-key-workers-fighting-for-equal-rights-video', 'united-voices'],
+            ['education/ng-interactive/2020/sep/02/somalinimo-black-female-and-muslim-at-cambridge-univeristy', 'somalinimo']
           ],
         'emailListId': 3745
       };
