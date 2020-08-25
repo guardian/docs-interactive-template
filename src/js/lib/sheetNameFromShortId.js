@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'united-voices';
+const DEFAULT_DOC = 'somalinimo';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
