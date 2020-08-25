@@ -25,11 +25,9 @@ function fillInLiveEl(rootEl, data) {
 
     const linkEl = rootEl.querySelector('[data-sheet="button"]');
     linkEl.setAttribute('href', data.link);
-    console.log('linkEl', linkEl, data.link);
 
     const imageEl = rootEl.querySelector('.g-live__image');
     imageEl.style.backgroundImage = `url(${data.image})`;
-    console.log('imageEl', imageEl, data.image);
 
 }
 
