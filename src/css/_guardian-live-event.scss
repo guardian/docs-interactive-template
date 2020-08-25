@@ -1,4 +1,9 @@
 .g-live {
+    display: none;
+    &.has-event {
+        display: block;
+    }
+
     position: relative;
     border-top: 1px solid #767676;
     margin: 0 10px 24px;
@@ -84,7 +89,7 @@
         &__online {
             $circle-size: 88px;
             font-size: 20px;
-            color: #121212;
+            color: #f6f6f6;
             font-weight: 600;
             width: $circle-size;
             height: $circle-size;
@@ -93,7 +98,7 @@
             position: absolute;
             top: -$circle-size/3;
             right: 20px;
-            background-color: #ffe500;
+            background-color: #c70000;
             border-radius: 100%;
         }
     }

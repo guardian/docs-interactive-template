@@ -81,7 +81,9 @@ define([], function () {
             ['news/ng-interactive/2020/jan/17/a-childhood-on-fire-documentary-video', 'a-childhood-on-fire'],
             ['news/ng-interactive/2020/feb/07/teranga-the-migrant-run-afrobeat-nightclub-uniting-naples-video', 'teranga'],
             ['news/ng-interactive/2020/apr/27/scars-how-our-wounds-make-us-who-we-are-video', 'scars'],
-            ['/world/ng-interactive/2020/may/12/quarantine-iranian-style-how-coronavirus-changed-one-couples-life', 'quarantine-iranian-style']
+            ['/world/ng-interactive/2020/may/12/quarantine-iranian-style-how-coronavirus-changed-one-couples-life', 'quarantine-iranian-style'],
+            ['/world/ng-interactive/2020/jul/15/the-circle-masculinity-racism-and-brotherhood-on-a-hackney-estate-video', 'the-circle'],
+            ['/politics/ng-interactive/2020/aug/12/united-voices-outsourced-key-workers-fighting-for-equal-rights-video', 'united-voices']
           ],
         'emailListId': 3745
       };

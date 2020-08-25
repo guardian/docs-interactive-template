@@ -2,6 +2,7 @@ import mainHTML from './text/main.html!text';
 import { PimpedYouTubePlayer } from './lib/youtube';
 import share from './lib/share';
 import sheetToDomInnerHtml from './lib/sheettodom';
+import initLiveEvent from './lib/liveEvent';
 import emailsignupURL from './lib/emailsignupURL';
 import { setAttributes, setData, setStyles } from './lib/dom';
 import { isMobile } from './lib/detect';
@@ -55,62 +56,10 @@ function initChapters(rootEl, docName, chapters) {
     chaptersWrapper.appendChild(ul);
 }
 
-function initLiveEvent() {
-    const liveInterval = setInterval(() => {
-        const liveEl = document.querySelector('.g-live');
-        if (liveEl) {
-            fillInLiveEl(liveEl);
-            clearInterval(liveInterval);
-        }
-    }, 100);
-}
-
-function fillInLiveEl(rootEl) {
-    const jsonLink = 'https://interactive.guim.co.uk/docsdata-test/1wYby3cMc_YhdP8kbPWEVa5jhJ22bX_xnIv6rhqt3czA.json';
-
-    loadJSON(jsonLink, function (rawData) {
-        const data = rawData.sheets['Sheet1'][0];
-        rootEl.querySelectorAll('[data-sheet]').forEach((el) => {
-            if (el && data[el.dataset.sheet]) {
-                el.innerText = data[el.dataset.sheet];
-            }
-        })
-
-        const imgEl = rootEl.querySelector('.g-live__image');
-        imgEl.style.backgroundImage = `url(${data['image']})`;
-
-        const buttonEl = rootEl.querySelector('[data-sheet="button"]');
-        buttonEl.setAttribute('href', data['link']);
-
-    });
-
-}
-
-
-
-function loadJSON(path, success, error) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                if (success)
-                    success(JSON.parse(xhr.responseText));
-            } else {
-                if (error)
-                    error(xhr);
-            }
-        }
-    };
-    xhr.open("GET", path, true);
-    xhr.send();
-}
-
-
 export function init(el, context, config) {
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
-    initLiveEvent(builder);
 
     const docName = sheetNameFromShortId(config.docsArray, window.guardian.config.page.pageId);
 
@@ -126,6 +75,9 @@ export function init(el, context, config) {
             docData: docData,
             comingSoonSheetName: config.comingSoonSheetName
         });
+
+        initLiveEvent(builder, docData);
+
 
         const headline = window.guardian && window.guardian.config && window.guardian.config.page && window.guardian.config.page.headline;
         const shareText = headline || docData.title;
