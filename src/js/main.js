@@ -131,6 +131,7 @@ export function init(el, context, config) {
 
 
         if (docData.comingNext) {
+            builder.querySelector('.coming-soon').classList.add('has-coming-soon');
             setStyles(builder.querySelector('.coming-soon-background'), {
                 'background-image': `url('${docData.comingNext.image}')`
             });
