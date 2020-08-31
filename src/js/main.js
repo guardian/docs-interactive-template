@@ -109,11 +109,14 @@ export function init(el, context, config) {
             hiddenDesc.classList.toggle('expanded');
         };
 
-        const emailIframe = builder.querySelector('.js-email-sub__iframe');
+        const emailIframeAll = builder.querySelectorAll('.js-email-sub__iframe');
 
-        setAttributes(emailIframe, {
-            src: emailsignupURL(config.emailListId)
+        emailIframeAll.forEach((emailIframe) => {
+            setAttributes(emailIframe, {
+                src: emailsignupURL(config.emailListId)
+            });
         });
+
 
 
         builder.querySelector('.docs__poster--loader').addEventListener('click', function () {
