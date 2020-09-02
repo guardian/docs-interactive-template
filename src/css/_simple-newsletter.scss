@@ -59,11 +59,12 @@
     }
 
     &__main {
-        max-width: 480px;
+        max-width: 580px;
         @include mq(leftCol) {
             margin-left: 160px;
         }
         @include mq(wide) {
+            max-width: 680px;
             margin-left: 240px;
         }
         .desc,
