@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'somalinimo';
+const DEFAULT_DOC = 'no-ball-games';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
