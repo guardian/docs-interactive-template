@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'somalinimo';
+const DEFAULT_DOC = 'daisy-chain';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
