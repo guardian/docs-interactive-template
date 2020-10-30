@@ -86,7 +86,7 @@ define([], function () {
                         ['politics/ng-interactive/2020/aug/12/united-voices-outsourced-key-workers-fighting-for-equal-rights-video', 'united-voices'],
                         ['education/ng-interactive/2020/sep/02/somalinimo-somali-culture-blackness-and-islam-at-cambridge-university', 'somalinimo'],
                         ['society/ng-interactive/2020/oct/08/no-ball-games-life-and-play-through-the-eyes-of-children-across-the-uk-documentary', 'no-ballgames'],
-                        ['business/ng-interactive/2020/oct/27/daisy-chain-can-a-cornish-town-adapt-to-survive-another-lockdown', 'daisy-chain']
+                        ['uk-news/ng-interactive/2020/nov/02/daisy-chain-can-a-cornish-town-adapt-to-survive-another-lockdown', 'daisy-chain']
                     ],
                 'emailListId': 3745
             };
