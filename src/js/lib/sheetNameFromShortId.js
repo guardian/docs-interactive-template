@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'daisy-chain';
+const DEFAULT_DOC = 'colette';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);

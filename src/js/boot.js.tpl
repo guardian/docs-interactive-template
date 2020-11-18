@@ -87,6 +87,7 @@ define([], function () {
                         ['education/ng-interactive/2020/sep/02/somalinimo-somali-culture-blackness-and-islam-at-cambridge-university', 'somalinimo'],
                         ['society/ng-interactive/2020/oct/08/no-ball-games-life-and-play-through-the-eyes-of-children-across-the-uk-documentary', 'no-ball-games'],
                         ['uk-news/ng-interactive/2020/nov/02/daisy-chain-can-a-cornish-town-adapt-to-survive-another-lockdown', 'daisy-chain']
+                        ['world/ng-interactive/2020/nov/18/colette-a-former-french-resistance-member-confronts-a-family-tragedy-75-years-later', 'colette']
                     ],
                 'emailListId': 3745
             };
