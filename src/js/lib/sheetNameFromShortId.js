@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'colette';
+const DEFAULT_DOC = 'the-wolf-dividing-norway';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
