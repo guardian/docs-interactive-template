@@ -88,7 +88,7 @@ define([], function () {
                         ['society/ng-interactive/2020/oct/08/no-ball-games-life-and-play-through-the-eyes-of-children-across-the-uk-documentary', 'no-ball-games'],
                         ['uk-news/ng-interactive/2020/nov/02/daisy-chain-can-a-cornish-town-adapt-to-survive-another-lockdown', 'daisy-chain'],
                         ['world/ng-interactive/2020/nov/18/colette-a-former-french-resistance-member-confronts-a-family-tragedy-75-years-later', 'colette'],
-                        ['film/ng-interactive/2020/dec/09/the-wolf-dividing-norway-the-hunter-v-the-environment', 'the-wolf-dividing-norway']
+                        ['film/ng-interactive/2020/dec/09/the-wolf-dividing-norway-the-hunter-v-the-environmentalist', 'the-wolf-dividing-norway']
                     ],
                 'emailListId': 3745
             };
