@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'the-wolf-dividing-norway';
+const DEFAULT_DOC = '2020-a-covid-space-odyssey';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);

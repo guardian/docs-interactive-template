@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "@guardian/libs": "^1.6.2",
     "jspm": "^0.16.34"
   }
 }
