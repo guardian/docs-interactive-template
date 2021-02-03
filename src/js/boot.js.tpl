@@ -90,7 +90,8 @@ define([], function () {
                         ['world/ng-interactive/2020/nov/18/colette-a-former-french-resistance-member-confronts-a-family-tragedy-75-years-later', 'colette'],
                         ['film/ng-interactive/2020/dec/09/the-wolf-dividing-norway-the-hunter-v-the-environmentalist', 'the-wolf-dividing-norway'],
                         ['science/ng-interactive/2020/dec/29/covid-from-space-humans-furthest-from-the-pandemic-jessica-meir', '2020-a-covid-space-odyssey'],
-                        ['world/ng-interactive/2021/jan/05/lupita-the-indigenous-activist-leading-a-new-generation-of-mexican-women', 'lupita']
+                        ['world/ng-interactive/2021/jan/05/lupita-the-indigenous-activist-leading-a-new-generation-of-mexican-women', 'lupita'],
+                        ['australia-news/ng-interactive/2021/jan/25/bright-lights-one-womans-devastating-25-year-addiction-to-gambling-video', 'bright-lights']
                     ],
                 'emailListId': 3745
             };
