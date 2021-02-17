@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'bright-lights';
+const DEFAULT_DOC = 'untold-chaos';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
