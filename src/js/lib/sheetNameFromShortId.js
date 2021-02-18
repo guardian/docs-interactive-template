@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'untold-chaos';
+const DEFAULT_DOC = 'my-brothers-keeper';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
