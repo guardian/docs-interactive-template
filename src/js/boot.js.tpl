@@ -92,7 +92,8 @@ define([], function () {
                         ['science/ng-interactive/2020/dec/29/covid-from-space-humans-furthest-from-the-pandemic-jessica-meir', '2020-a-covid-space-odyssey'],
                         ['world/ng-interactive/2021/jan/05/lupita-the-indigenous-activist-leading-a-new-generation-of-mexican-women', 'lupita'],
                         ['australia-news/ng-interactive/2021/jan/25/bright-lights-one-womans-devastating-25-year-addiction-to-gambling-video', 'bright-lights'],
-                        ['world/ng-interactive/2021/feb/18/untold-chaos-living-through-libyas-wars-documentary', 'untold-chaos']
+                        ['world/ng-interactive/2021/feb/18/untold-chaos-living-through-libyas-wars-documentary', 'untold-chaos'],
+                        ['world/ng-interactive/2021/feb/23/my-brothers-keeper-a-former-guantanamo-detainee-his-guard-and-their-unlikely-friendship', 'my-brothers-keeper']
                     ],
                 'emailListId': 3745
             };

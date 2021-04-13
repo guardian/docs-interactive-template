@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'my-brothers-keeper';
+const DEFAULT_DOC = 'space-to-be';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
