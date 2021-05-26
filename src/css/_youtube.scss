@@ -104,6 +104,14 @@
         background-position: center center;
         background-size: cover;
 
+        @include mq(desktop) {
+            background-position: center -390px;
+        }
+
+        @include mq(wide) {
+            background-position: center -590px;
+        }
+
         @media (inverted-colors: inverted) {
             filter: invert(100%);
         }

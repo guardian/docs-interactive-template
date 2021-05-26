@@ -93,7 +93,8 @@ define([], function () {
                         ['world/ng-interactive/2021/jan/05/lupita-the-indigenous-activist-leading-a-new-generation-of-mexican-women', 'lupita'],
                         ['australia-news/ng-interactive/2021/jan/25/bright-lights-one-womans-devastating-25-year-addiction-to-gambling-video', 'bright-lights'],
                         ['world/ng-interactive/2021/feb/18/untold-chaos-living-through-libyas-wars-documentary', 'untold-chaos'],
-                        ['world/ng-interactive/2021/feb/23/my-brothers-keeper-a-former-guantanamo-detainee-his-guard-and-their-unlikely-friendship', 'my-brothers-keeper']
+                        ['world/ng-interactive/2021/feb/23/my-brothers-keeper-a-former-guantanamo-detainee-his-guard-and-their-unlikely-friendship', 'my-brothers-keeper'],
+                        ['global/ng-interactive/2021/apr/16/space-to-be-documentary', 'space-to-be']
                     ],
                 'emailListId': 3745
             };
