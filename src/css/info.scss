@@ -125,8 +125,8 @@
             .supporter-logo {
                 img {
                     margin-top: 1px;
-                    width: 108px;
-                    height: 45px;
+                    width: 180px;
+                    height: auto;
                 }
             }
             @include mq(leftCol) {
