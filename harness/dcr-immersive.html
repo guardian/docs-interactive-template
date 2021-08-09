@@ -574,17 +574,27 @@
          <div class="dcr-1avyp1d">
             <main>
                <div>
+
                   <figure id="b5023444-89be-4e42-9121-bfe820719028" class="">
                     <figure class="element element-interactive interactive" data-interactive="http://localhost:8000/boot.js" data-canonical-url="http://localhost:8000/boot.js" data-alt="interactive"></figure>
-                    <!-- <figure class="element element-atom">
-                        <figure class="interactive interactive-atom">
-                        <link rel="stylesheet" type="text/css" href="main.css" />
-                            <%= html %>
-                            <script>
-                                <%= js %>
-                            </script>
-                        </figure>
-                    </figure> -->
+
+                    <!-- Setup Curl (https://github.com/cujojs/curl) to load boot.js -->
+                    <script>
+                      window.curl = window.curlConfig;
+                    </script>
+                    <script src="/curl.js"></script>
+
+                    <!-- Bootstrap the interactive. Note, DCR mimicks boot.js
+                    but doesn't use it directly. See:
+                    https://github.com/guardian/dotcom-rendering/blob/main/src/web/components/elements/InteractiveBlockComponent.tsx.
+                    -->
+                    <script>
+                        var el = document.querySelector('.interactive');
+                        require(['/boot.js'], function(app) {
+                                app.boot(el);
+                        });
+                    </script>
+
                   </figure>
                </div>
             </main>
