@@ -19,3 +19,181 @@
 
 @import 'guardian-live-event';
 @import 'simple-newsletter';
+
+
+// DCR fixes to layout
+@include mq(weirdness) {
+  .doc-info {
+    padding: 3px 0;
+  }
+}
+@include mq(leftCol) {
+  .doc-info .intro {
+    width: 680px;
+  }
+}
+@include mq(wide) {
+  .doc-info .intro {
+    width: 770px;
+  }
+}
+.fc-container .fc-container__inner {
+    border-top: 0.0625rem solid #dcdcdc;
+}
+.fc-container__inner, .facia-container__inner {
+    padding-top: 0.1875rem;
+}
+.fc-container__inner, .facia-container__inner, .fc-container__pagination, .index-page-header {
+    overflow: hidden;
+    position: relative;
+    margin-left: 0.625rem; // 10px
+    margin-right: 0.625rem;
+}
+.fc-container:after, .fc-container:before, .facia-container:after, .facia-container:before {
+    content: '';
+    display: table;
+}
+@include mq(phablet) {
+  .fc-container__inner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@include mq(tablet) {
+  .fc-container__inner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+/* More docs */
+@include mq(leftCol) {
+  .fc-container__header__title:after {
+    display: block;
+  }
+}
+#more-documentaries .fc-container__inner .fc-container__header__title:after {
+    background-color: #767676;
+}
+/* This isn't showing up? */
+.fc-container__header__title:after {
+    content: '';
+    display: none;
+    position: absolute;
+    height: 1.875rem;
+    width: 0.0625rem;
+    background-color: #dcdcdc;
+    right: -0.6875rem;
+    top: -0.375rem;
+}
+// @media (min-width: 71.25em)
+//   .fc-container__header, .container__header {
+//     float: left;
+//     width: 8.75rem;
+//   }
+// }
+
+.fc-container__header, .container__header {
+    position: relative;
+}
+@include mq(leftCol) {
+  .fc-container__header, .container__header {
+      float: left;
+      width: 8.75rem;
+  }
+}
+// @include mq(leftCol) {
+//   .fc-container__body, .container__body {
+//       margin-left: 10rem;
+//   }
+// }
+@include mq(wide) {
+  .fc-container__header, .container__header {
+    width: 13.75rem;
+  }
+}
+@include mq(wide) {
+  .fc-container__body, .container__body {
+    margin-left: 15rem;
+    width: 58.75rem;
+  }
+}
+.fc-container__header__title a, .fc-container__header__title>h2 a, .fc-container__title__text a, .fc-container__header__title--sticky a, .container__title a {
+    color: inherit;
+}
+.fc-container__body, .container__body {
+    padding-top: 0.375rem;
+    padding-bottom: 0.75rem;
+    opacity: 1;
+    transition: opacity .25s linear;
+}
+.fc-slice-wrapper {
+    padding-top: 0.00063rem;
+    margin: 0 -0.625rem;
+}
+#more-documentaries .fc-slice-wrapper .fc-slice:not(.l-row--cols-1) .fc-slice__item {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0;
+    margin-bottom: 20px;
+    width: 50%;
+}
+#more-documentaries .fc-slice-wrapper .fc-slice:not(.l-row--cols-1) .fc-slice__item + .fc-slice__item:before {
+    border-left: 1px solid #333;
+}
+.fc-slice__item+.fc-slice__item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.0625rem;
+    height: 100%;
+    border-left: 0.0625rem solid #dcdcdc;
+}
+.fc-slice__item {
+    width: 100%;
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 0.75rem;
+}
+@include mq(phablet) {
+  #more-documentaries .fc-slice-wrapper .fc-slice:not(.l-row--cols-1) .fc-slice__item {
+      width: 25%;
+  }
+}
+.fc-item {
+    width: 100%;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    box-sizing: border-box;
+}
+@include mq(tablet) {
+
+  .fc-item {
+      margin-right: 0.625rem;
+  }
+}
+
+/* Newsletter row */
+@include mq(tablet) {
+  .simple-newsletter {
+    width: 740px;
+  }
+}
+@include mq(desktop) {
+  .simple-newsletter {
+      width: 980px;
+  }
+}
+@include mq(leftCol) {
+  .simple-newsletter {
+      width: 1140px;
+      min-height: 60px;
+  }
+}
+@include mq(wide) {
+  .simple-newsletter {
+      width: 1300px;
+  }
+}
