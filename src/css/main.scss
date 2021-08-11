@@ -22,10 +22,26 @@
 
 
 // DCR fixes to layout
-@include mq(weirdness) {
-  .doc-info {
-    padding: 3px 0;
-  }
+
+.docs__poster--title-wrapper {
+    @include mq(phablet) {
+        margin: 0;
+    }
+    @include mq(tablet) {
+        margin: 0 auto;
+    }
+}
+
+.doc-info {
+    @include mq(weirdness) {
+        padding: 3px 0;
+    }
+    @include mq(phablet) {
+        margin: 0 20px;
+    }
+    @include mq(tablet) {
+        margin: 0 auto;
+    }
 }
 @include mq(leftCol) {
   .doc-info .intro {
@@ -66,24 +82,26 @@
   }
 }
 /* More docs */
-@include mq(leftCol) {
-  .fc-container__header__title:after {
-    display: block;
-  }
-}
 #more-documentaries .fc-container__inner .fc-container__header__title:after {
     background-color: #767676;
+}
+.fc-container__header__title {
+    font-family: "Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+    line-height: 115%;
 }
 /* This isn't showing up? */
 .fc-container__header__title:after {
     content: '';
-    display: none;
+    // display: none;
     position: absolute;
     height: 1.875rem;
     width: 0.0625rem;
     background-color: #dcdcdc;
     right: -0.6875rem;
     top: -0.375rem;
+    @include mq(leftCol) {
+        display: block;
+    }
 }
 // @media (min-width: 71.25em)
 //   .fc-container__header, .container__header {
@@ -160,8 +178,27 @@
 @include mq(phablet) {
   #more-documentaries .fc-slice-wrapper .fc-slice:not(.l-row--cols-1) .fc-slice__item {
       width: 25%;
+      @include mq(leftCol) {
+        width: calc(25% - 50px);
+        margin-left: 10px;
+      }
+      @include mq(wide) {
+          width: 25%;
+          margin-left: 0;
+      }
   }
 }
+
+#more-documentaries {
+    @include mq(phablet) {
+        padding: 0 20px;
+    }
+    @include mq(tablet) {
+        padding: unset;
+    }
+  }
+
+
 .fc-item {
     width: 100%;
     padding-left: 0.625rem;
