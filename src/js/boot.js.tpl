@@ -95,7 +95,8 @@ define([], function () {
                         ['world/ng-interactive/2021/feb/18/untold-chaos-living-through-libyas-wars-documentary', 'untold-chaos'],
                         ['world/ng-interactive/2021/feb/23/my-brothers-keeper-a-former-guantanamo-detainee-his-guard-and-their-unlikely-friendship', 'my-brothers-keeper'],
                         ['global/ng-interactive/2021/apr/16/space-to-be-documentary', 'space-to-be'],
-                        ['world/ng-interactive/2021/jul/06/the-return-a-family-reconnects-with-the-amazon-as-covid-threatens-their-village-video', 'the-return']
+                        ['world/ng-interactive/2021/jul/06/the-return-a-family-reconnects-with-the-amazon-as-covid-threatens-their-village-video', 'the-return'],
+                        ['global/ng-interactive/2021/jul/29/this-body-black-america-hope-trust-and-covid-vaccine-trials-video', 'this-body']
                     ],
                 'emailListId': 3745
             };

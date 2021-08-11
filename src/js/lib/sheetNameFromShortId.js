@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'this-body';
+const DEFAULT_DOC = 'rip-seni';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
