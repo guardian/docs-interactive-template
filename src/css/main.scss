@@ -249,3 +249,12 @@
         }
     }
 }
+
+.docs__poster--image {
+    @include mq(desktop) {
+        background-position: center -52vh;
+    }
+    @include mq(wide){
+        background-position: center -70vh;
+    }
+}
