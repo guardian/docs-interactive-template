@@ -234,3 +234,18 @@
       width: 1300px;
   }
 }
+
+
+
+// the guardian live container
+.g-live {
+    @include mq(tablet) {
+        padding: 0;
+    }
+    &__title {
+        @include mq(leftCol) {
+            left: 10px;
+            width: 150px;
+        }
+    }
+}
