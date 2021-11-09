@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'saintmaking';
+const DEFAULT_DOC = 'sindicat';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);

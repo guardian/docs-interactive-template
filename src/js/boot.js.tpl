@@ -97,7 +97,8 @@ define([], function () {
                         ['global/ng-interactive/2021/apr/16/space-to-be-documentary', 'space-to-be'],
                         ['world/ng-interactive/2021/jul/06/the-return-a-family-reconnects-with-the-amazon-as-covid-threatens-their-village-video', 'the-return'],
                         ['global/ng-interactive/2021/jul/29/this-body-black-america-hope-trust-and-covid-vaccine-trials-video', 'this-body'],
-                        ['news/ng-interactive/2021/aug/12/rip-seni-racism-graffiti-and-the-uks-mental-health-crisis-video', 'rip-seni']
+                        ['news/ng-interactive/2021/aug/12/rip-seni-racism-graffiti-and-the-uks-mental-health-crisis-video', 'rip-seni'],
+                        ['uk-news/ng-interactive/2021/sep/22/saintmaking-the-canonisation-of-derek-jarman-by-queer-nuns-video', 'saintmaking']
                     ],
                 'emailListId': 3745
             };
