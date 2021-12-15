@@ -98,7 +98,8 @@ define([], function () {
                         ['world/ng-interactive/2021/jul/06/the-return-a-family-reconnects-with-the-amazon-as-covid-threatens-their-village-video', 'the-return'],
                         ['global/ng-interactive/2021/jul/29/this-body-black-america-hope-trust-and-covid-vaccine-trials-video', 'this-body'],
                         ['news/ng-interactive/2021/aug/12/rip-seni-racism-graffiti-and-the-uks-mental-health-crisis-video', 'rip-seni'],
-                        ['uk-news/ng-interactive/2021/sep/22/saintmaking-the-canonisation-of-derek-jarman-by-queer-nuns-video', 'saintmaking']
+                        ['uk-news/ng-interactive/2021/sep/22/saintmaking-the-canonisation-of-derek-jarman-by-queer-nuns-video', 'saintmaking'],
+                        ['world/ng-interactive/2021/nov/11/sindicat-evading-eviction-barcelona-guardian-documentary', 'sindicat']
                     ],
                 'emailListId': 3745
             };
