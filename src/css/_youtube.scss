@@ -101,16 +101,19 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-position: center;
+        background-position: -50px -60px;
         background-size: cover;
+        background-repeat: no-repeat;
 
-        @include mq(mobileLandscape) {
+        // @include mq(mobileLandscape) {
+        //     background-position: -420px center;
+        // }
+        // @include mq(phablet) {
+        //   background-position: -180px center;
+        // }
+        @include mq(desktop) {
             background-position: center center;
         }
-
-        // @include mq(wide) {
-        //     background-position: center center;
-        // }
 
         @media (inverted-colors: inverted) {
             filter: invert(100%);

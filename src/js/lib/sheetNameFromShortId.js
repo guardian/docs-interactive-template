@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'rip-seni';
+const DEFAULT_DOC = 'unsafe-passage';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
