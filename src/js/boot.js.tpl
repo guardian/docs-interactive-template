@@ -99,7 +99,10 @@ define([], function () {
                         ['global/ng-interactive/2021/jul/29/this-body-black-america-hope-trust-and-covid-vaccine-trials-video', 'this-body'],
                         ['news/ng-interactive/2021/aug/12/rip-seni-racism-graffiti-and-the-uks-mental-health-crisis-video', 'rip-seni'],
                         ['uk-news/ng-interactive/2021/sep/22/saintmaking-the-canonisation-of-derek-jarman-by-queer-nuns-video', 'saintmaking'],
-                        ['world/ng-interactive/2021/nov/11/sindicat-evading-eviction-barcelona-guardian-documentary', 'sindicat']
+                        ['world/ng-interactive/2021/nov/11/sindicat-evading-eviction-barcelona-guardian-documentary', 'sindicat'],
+                        ['environment/ng-interactive/2021/dec/02/unsafe-passage-on-board-a-refugee-rescue-ship-racing-for-europe-guardian-documentary', 'unsafe-passage'],
+                        ['global/ng-interactive/2021/dec/21/happiness-is-a-journey-the-hidden-life-of-an-american-warehouse-worker-video', 'happiness-is-a-journey'],
+                        ['world/ng-interactive/2022/jan/19/the-black-cop-a-police-officers-story-of-racism-remorse-and-resistance-documentary', 'the-black-cop']
                     ],
                 'emailListId': 3745
             };

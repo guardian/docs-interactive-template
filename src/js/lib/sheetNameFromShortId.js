@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'unsafe-passage';
+const DEFAULT_DOC = 'lenka';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);

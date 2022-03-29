@@ -1,4 +1,11 @@
 #more-documentaries {
+    margin: auto;
+    @include mq(leftCol) {
+        max-width: 1140px;
+    }
+    @include mq(wide) {
+        max-width: 1300px;
+    }
     .fc-container__inner {
         border-color: #767676;
         .fc-container__header__title {
@@ -10,7 +17,7 @@
             }
         }
         .fc-container__header__title {
-            color: #FFF;
+            color: #fff;
             font-weight: 600;
             font-size: 20px;
             line-height: 24px;
@@ -20,7 +27,7 @@
             }
 
             &:hover a {
-                color: #FFF;
+                color: #fff;
                 text-decoration: none;
             }
         }
@@ -42,7 +49,7 @@
                 .fc-item:hover {
                     background-color: transparent;
                 }
-                &+.fc-slice__item:before {
+                & + .fc-slice__item:before {
                     border-left: 1px solid #333;
                 }
                 .doc-card:hover {
