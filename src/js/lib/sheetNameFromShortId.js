@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'lenka';
+const DEFAULT_DOC = 'cinema-of-ukraine';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
