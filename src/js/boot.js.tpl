@@ -103,8 +103,8 @@ define([], function () {
                         ['environment/ng-interactive/2021/dec/02/unsafe-passage-on-board-a-refugee-rescue-ship-racing-for-europe-guardian-documentary', 'unsafe-passage'],
                         ['global/ng-interactive/2021/dec/21/happiness-is-a-journey-the-hidden-life-of-an-american-warehouse-worker-video', 'happiness-is-a-journey'],
                         ['world/ng-interactive/2022/jan/19/the-black-cop-a-police-officers-story-of-racism-remorse-and-resistance-documentary', 'the-black-cop'],
-                        ['/science/ng-interactive/2022/feb/15/lenka-methamphetamine-addiction-in-czech-republic-documentary', 'lenka'],
-                        ['/world/ng-interactive/2022/mar/31/cinema-of-ukraine-artists-reflect-on-modern-history-culture-and-people', 'cinema-of-ukraine']
+                        ['science/ng-interactive/2022/feb/15/lenka-methamphetamine-addiction-in-czech-republic-documentary', 'lenka'],
+                        ['world/ng-interactive/2022/mar/31/cinema-of-ukraine-artists-reflect-on-modern-history-culture-and-people', 'cinema-of-ukraine']
                     ],
                 'emailListId': 3745
             };
