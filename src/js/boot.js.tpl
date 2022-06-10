@@ -104,7 +104,8 @@ define([], function () {
                         ['global/ng-interactive/2021/dec/21/happiness-is-a-journey-the-hidden-life-of-an-american-warehouse-worker-video', 'happiness-is-a-journey'],
                         ['world/ng-interactive/2022/jan/19/the-black-cop-a-police-officers-story-of-racism-remorse-and-resistance-documentary', 'the-black-cop'],
                         ['science/ng-interactive/2022/feb/15/lenka-methamphetamine-addiction-in-czech-republic-documentary', 'lenka'],
-                        ['world/ng-interactive/2022/mar/31/cinema-of-ukraine-artists-reflect-on-modern-history-culture-and-people', 'cinema-of-ukraine']
+                        ['world/ng-interactive/2022/mar/31/cinema-of-ukraine-artists-reflect-on-modern-history-culture-and-people', 'cinema-of-ukraine'],
+                        ['world/ng-interactive/2022/may/17/the-spider-man-of-sudan-the-real-life-superhero-of-the-protest-movement', 'the-\'spider-man\'-of-sudan']
                     ],
                 'emailListId': 3745
             };
