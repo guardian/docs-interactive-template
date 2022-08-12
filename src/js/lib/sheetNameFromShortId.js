@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'dear-bradford';
+const DEFAULT_DOC = 'little-warrior';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
@@ -9,5 +9,4 @@ export default function sheetNameFromShortId(docsArray, shortUrl) {
     } else {
         return docName ? docName : DEFAULT_DOC;
     }
-
 }
