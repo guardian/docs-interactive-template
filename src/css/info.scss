@@ -61,12 +61,18 @@
             transition: opacity 240ms;
             cursor: pointer;
             opacity: 0.66;
+            background: 0;
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            &.expanded {
+                @include icon-showless;
+            }
+
             &:hover {
                 opacity: 1;
             }
-        }
-        .expanded + .intro__expand {
-            @include icon-showless;
         }
         a {
             color: inherit;
