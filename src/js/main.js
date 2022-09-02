@@ -57,6 +57,7 @@ function initChapters(rootEl, docName, chapters) {
 }
 
 export function init(el, context, config) {
+    document.querySelector('main').setAttribute('id','maincontent');
     const builder = document.createElement('div');
     builder.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
@@ -92,6 +93,7 @@ export function init(el, context, config) {
 
         const hiddenDesc = builder.querySelector('#intro-expansion');
         const showMoreBtn = builder.querySelector('#intro-expand-btn');
+        let expandedHiddenDesc = false;
 
         if (docData.isSupported) {
             new DocsSupporter({
@@ -107,6 +109,9 @@ export function init(el, context, config) {
         //Show the long description
         showMoreBtn.onclick = function () {
             hiddenDesc.classList.toggle('expanded');
+            showMoreBtn.classList.toggle('expanded');
+            expandedHiddenDesc = !expandedHiddenDesc;
+            showMoreBtn.innerHTML = expandedHiddenDesc ? 'Hide full Description' : 'Show full Description';
         };
 
         const emailIframeAll = builder.querySelectorAll('.js-email-sub__iframe');
@@ -145,7 +150,15 @@ export function init(el, context, config) {
             // use linkedDocs data to inject onward journey elements
             docData.linkedDocs.forEach((linkedDoc, i) => {
                 const el = builder.querySelector(`section#more-documentaries .fc-slice__item:nth-child(${++i}) .nextSnap`);
-                el.innerHTML = `<div class="doc-card"><img class="doc-card__poster" src="${linkedDoc.posterImage}"><div class="doc-card__meta"><p class="doc-card__description">${linkedDoc.logline}</p><a class="doc-card__link" href="${linkedDoc.fullLink}"></a></div></div>`;
+                el.innerHTML = `
+                <div class="doc-card">
+                    <img class="doc-card__poster" alt="${linkedDoc.title} poster image" src="${linkedDoc.posterImage}">
+                    <div class="doc-card__meta">
+                        <p class="doc-card__description">${linkedDoc.logline}</p>
+                        <a class="doc-card__link" href="${linkedDoc.fullLink}" aria-label="Watch the documentary, ${linkedDoc.title}">
+                        </a>
+                    </div>
+                </div>`;
             });
         } else {
             // Use legacy doc-cards snaps
