@@ -12,11 +12,8 @@ These may need to be squished.
 
 ## Documentary template
 1. In the file SheetnamefromshortId change DefaultDoc to be the name of the documentary from the spreadsheet with hyphens ‘this-documentary’
-
 2. boot.js should include all previous documentaries, to add an old documentary copy the url of the documentary, without guardian section
-
 3. `nvm use v10` `npm start`
-
 4. Run `grunt` or `./node_modules/.bin/grunt` and check that works 
 Note: If you change the css in one you change it for all documentaries, so be careful 
 5. To deploy run `grunt deploy`
