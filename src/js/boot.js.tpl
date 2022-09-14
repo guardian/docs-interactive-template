@@ -107,7 +107,8 @@ define([], function () {
                         ['world/ng-interactive/2022/mar/31/cinema-of-ukraine-artists-reflect-on-modern-history-culture-and-people', 'cinema-of-ukraine'],
                         ['world/ng-interactive/2022/may/17/the-spider-man-of-sudan-the-real-life-superhero-of-the-protest-movement', 'the-\'spider-man\'-of-sudan'],
                         ['world/ng-interactive/2022/may/25/sending-aya-back-the-syrian-teen-facing-deportation-in-denmark-documentary', 'sending-aya-back'],
-                        ['world/ng-interactive/2022/jun/22/one-good-song-can-do-more-than-5000-protests-the-queer-revolution-in-the-middle-east', 'beirut-dreams-in-color']
+                        ['world/ng-interactive/2022/jun/22/one-good-song-can-do-more-than-5000-protests-the-queer-revolution-in-the-middle-east', 'beirut-dreams-in-color'],
+                        ['world/ng-interactive/2022/aug/22/little-warrior-the-boxer-breaking-away-from-venezuelan-poverty-documentary', 'little-warrior']
                     ],
                 'emailListId': 3745
             };
