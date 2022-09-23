@@ -12,6 +12,7 @@ import DocsSupporter from './lib/docs-supporter';
 import DocsComingSoon from './lib/docs-coming-soon';
 import DocumentaryMetadata from './lib/sheetData';
 
+
 function initChapters(rootEl, docName, chapters) {
     chapters.sort((a, b) => parseInt(a.chapterTimestamp) - parseInt(b.chapterTimestamp));
 
@@ -227,4 +228,3 @@ export function init(el, context, config) {
     });
 
 }
-
