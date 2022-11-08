@@ -108,7 +108,8 @@ define([], function () {
                         ['world/ng-interactive/2022/may/17/the-spider-man-of-sudan-the-real-life-superhero-of-the-protest-movement', 'the-\'spider-man\'-of-sudan'],
                         ['world/ng-interactive/2022/may/25/sending-aya-back-the-syrian-teen-facing-deportation-in-denmark-documentary', 'sending-aya-back'],
                         ['world/ng-interactive/2022/jun/22/one-good-song-can-do-more-than-5000-protests-the-queer-revolution-in-the-middle-east', 'beirut-dreams-in-color'],
-                        ['world/ng-interactive/2022/aug/22/little-warrior-the-boxer-breaking-away-from-venezuelan-poverty-documentary', 'little-warrior']
+                        ['world/ng-interactive/2022/aug/22/little-warrior-the-boxer-breaking-away-from-venezuelan-poverty-documentary', 'little-warrior'],
+                        ['world/ng-interactive/2022/sep/29/lady-of-the-gobi-trucking-coal-across-the-desert-to-china', 'lady-of-the-gobi']
                     ],
                 'emailListId': 3745
             };

@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'lady-of-the-gobi';
+const DEFAULT_DOC = 'whose-job-is-it-to-save-the-planet?';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
