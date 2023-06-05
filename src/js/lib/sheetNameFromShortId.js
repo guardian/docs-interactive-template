@@ -1,4 +1,4 @@
-const DEFAULT_DOC = 'the-great-abandonment';
+const DEFAULT_DOC = 'born-in-damascus';
 
 export default function sheetNameFromShortId(docsArray, shortUrl) {
     const map = new Map(docsArray);
