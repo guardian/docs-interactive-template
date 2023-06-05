@@ -115,6 +115,7 @@ define([], function () {
                         ['environment/ng-interactive/2022/dec/05/skyward-birdwatching-is-belonging-for-two-teenage-conservationists', 'skyward'],
                         ['world/ng-interactive/2023/jan/30/ghosts-of-moria-living-in-the-ashes-of-europes-largest-migrant-camp-documentary', 'ghosts-of-moria'],
                         ['world/ng-interactive/2023/feb/23/the-year-that-never-ended-how-a-ukrainian-comedian-rebuilt-a-strangers-house-documentary', 'the-year-that-never-ended']
+                        ['news/ng-interactive/2023/apr/05/born-in-damascus-the-legacy-of-syria-war-for-two-separated-cousins', 'born-in-damascus']
                     ],
                 'emailListId': 3745
             };
