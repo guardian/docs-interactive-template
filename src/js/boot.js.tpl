@@ -111,6 +111,7 @@ define([], function () {
                         ['world/ng-interactive/2022/aug/22/little-warrior-the-boxer-breaking-away-from-venezuelan-poverty-documentary', 'little-warrior'],
                         ['world/ng-interactive/2022/sep/29/lady-of-the-gobi-trucking-coal-across-the-desert-to-china', 'lady-of-the-gobi'],
                         ['global/ng-interactive/2022/nov/10/climate-carnage-whose-job-is-it-to-save-the-planet-documentary', 'whose-job-is-it-to-save-the-planet?']
+                        ['news/ng-interactive/2023/apr/05/born-in-damascus-the-legacy-of-syria-war-for-two-separated-cousins', 'born-in-damascus']
                     ],
                 'emailListId': 3745
             };
